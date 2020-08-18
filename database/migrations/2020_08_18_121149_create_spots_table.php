@@ -19,7 +19,8 @@ class CreateSpotsTable extends Migration
             $table->string('email', 60);
             $table->string('password', 30);
             $table->string('img', 255);
-            $table->timestamps();
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 
