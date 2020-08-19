@@ -13,11 +13,13 @@ class CreateReviewLikesTable extends Migration
      */
     public function up()
     {
-       
+
         Schema::create('review_likes', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('spot_id');
+            // $table->foreign('spot_id')->references('id')->on('spots');
             $table->unsignedInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
