@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         $users = [
             [
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
                 'email'  => 'nobinobi@gmail.com',
                 'password'=>'12345',
             ],
-            
+
         ];
 
         foreach ($users as $user) {
@@ -40,9 +40,10 @@ class UserSeeder extends Seeder
                 'name' => $user['name'],
                 'email' => $user['email'],
                 'password'=>$user['password'],
+                'img' => 'img/test.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
+        }
     }
-}
 }
