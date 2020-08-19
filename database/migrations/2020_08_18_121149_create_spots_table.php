@@ -18,11 +18,11 @@ class CreateSpotsTable extends Migration
             $table->string('name', 30);
             $table->text('content');
             $table->string('img', 255);
-            $table->text('location');
+            $table->text('location')->nullable();
             $table->text('iframe_code');
-            $table->increments('user_id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 
