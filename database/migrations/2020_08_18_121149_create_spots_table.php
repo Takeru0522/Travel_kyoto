@@ -21,7 +21,7 @@ class CreateSpotsTable extends Migration
             $table->text('location')->nullable();
             $table->text('iframe_code')->nullable();
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
