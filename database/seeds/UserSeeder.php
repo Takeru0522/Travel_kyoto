@@ -13,23 +13,24 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
-
         $users = [
             [
                 'name' => 'ドラえもん',
                 'email'  => 'doraemon@gmail.com',
                 'password'=>'abc',
+                'img' => 'storage/images/profilePicture/draemon.jpg',
             ],
             [
                 'name' => 'ドラみちゃん',
                 'email'  => 'dorami@gmail.com',
                 'password'=>'aaa',
+                'img' => 'storage/images/profilePicture/drami.jpeg',
             ],
             [
                 'name' => 'のびた',
                 'email'  => 'nobinobi@gmail.com',
                 'password'=>'12345',
+                'img' => 'storage/images/profilePicture/nobita.png',
             ],
 
         ];
@@ -40,7 +41,7 @@ class UserSeeder extends Seeder
                 'name' => $user['name'],
                 'email' => $user['email'],
                 'password'=>$user['password'],
-                'img' => 'img/test.jpg',
+                'img' => $user['img'],
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
