@@ -17,19 +17,19 @@ class UserSeeder extends Seeder
             [
                 'name' => 'ドラえもん',
                 'email'  => 'doraemon@gmail.com',
-                'password'=>'abc',
+                'password'=> bcrypt('abc'),
                 'img' => 'storage/images/profilePicture/draemon.jpg',
             ],
             [
                 'name' => 'ドラみちゃん',
                 'email'  => 'dorami@gmail.com',
-                'password'=>'aaa',
+                'password'=> bcrypt('aaa'),
                 'img' => 'storage/images/profilePicture/drami.jpeg',
             ],
             [
                 'name' => 'のびた',
                 'email'  => 'nobinobi@gmail.com',
-                'password'=>'12345',
+                'password'=> bcrypt('12345'),
                 'img' => 'storage/images/profilePicture/nobita.png',
             ],
 
