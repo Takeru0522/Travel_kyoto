@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/spot/show', 'SpotController@show')->name('spots.show');
+// Route::get('kyoto/{id}/edit', 'SpotController@edit')->name('kyoto.edit');
