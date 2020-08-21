@@ -30,10 +30,12 @@
                         <label for="title">メールアドレス</label>
                         <textarea class="form-control" name="email" id="text">{{ old('email', $user->email) }}</textarea>
                     </div>
+                    <!--
                     <div class="form-group">
                         <label for="title">パスワード</label>
                         <textarea class="form-control" name="password" id="text">{{ old('password', $user->password) }}</textarea>
                     </div>
+                    -->
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">更新</button>
                     </div>

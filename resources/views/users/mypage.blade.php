@@ -13,18 +13,16 @@
     <p>名前：{{ $user->name }}</p>
 
     <p>メールアドレス：{{ $user->email }}</p>
-     <p>写真：{{ $user->img}}</p>   
+    <p>写真：{{ $user->img}}</p>   
     
-    <p>パスワード：{{ $user->password}}</p>  
+    {{-- <p>パスワード：{{ $user->password}}</p> --}}
  
     {{-- {{ $user->created_at }}</p> --}}
     {{-- 名前→{{$profile->name}} --}}
         {{-- プロフィール写真→{{$profile->image}} --}}
         {{-- 性別→{{$profile->gender}}
         居住地→{{$profile->prefecture}} --}}
-        <a class="btn btn-success" href="{{ route('users.edit', ['id' => $user->id]) }}">編集</a>
-
-
+    <a class="btn btn-success" href="{{ route('users.edit', ['id' => $user->id]) }}">編集</a>
  
     <pre>
         {{-- <h1>{{ $msg }}</h1> --}}
