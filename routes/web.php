@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('common');
-});
+// Route::get('/', function () {
+//     return view('common');
+// });
+    
+Route::get('/', 'SpotController@index')->name('spot.index');
+
+
+
 
 Auth::routes();
 
