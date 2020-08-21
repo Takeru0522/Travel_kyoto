@@ -13,6 +13,9 @@
             <p>{{ $spot->name }}</p>
             <p>{{ $spot->content }}</p>
             <p>{{ $spot->img }}</p>
+            <p>{{ $spot->location }}</p>
+            <p>{{ $spot->iflame_code }}</p>
+            <p>{{ $spot->created_at }}</p>
         </div>
     @endforeach
 </body>
