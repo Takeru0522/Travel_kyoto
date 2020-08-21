@@ -16,10 +16,9 @@ class CreateSpotWantToTable extends Migration
         Schema::create('spot_want_to', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('spot_id');
-            // $table->foreign('spot_id')->references('id')->on('spots');
+            $table->foreign('spot_id')->references('id')->on('spots');
             $table->unsignedInteger('user_id');
-            // $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
