@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
             DB::table('users')->insert([
                 'name' => $user['name'],
                 'email' => $user['email'],
-                'password'=>$user['password'],
+                'password'=> bcrypt($user['password']),
                 'img' => 'img/test.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
