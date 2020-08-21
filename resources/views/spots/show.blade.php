@@ -1,9 +1,16 @@
-@extends('layouts.common')
+@extends('layouts.layout')
 
 @section('title')
-京都観光地
+京都    
 @endsection
 
 @section('content')
-京都観光地一覧
+
+<p>{{ $spot->name }}</p>
+<p>{{ $spot->img }}</p>
+<p>{{ $spot->content}}</p>
+<p>{{ $spot->location }}</p>
+<p>{{ $spot->created }}</p>
+<p>{{ $spot->updated }}</p>
+
 @endsection

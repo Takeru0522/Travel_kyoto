@@ -13,8 +13,7 @@ class SpotController extends Controller
     // }
     public function show($id){
         $spot = Spot::findOrFail($id);
-        dd($spot);
-        return view('spots.show');
+        return view('spots.show',['spot' => $spot]);
     }
 //     public function edit(int $id){
 //         $kyoto = Kyoto::find($id);

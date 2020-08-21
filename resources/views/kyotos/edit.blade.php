@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layout')
 @section('title')
 編集
 @endsection
