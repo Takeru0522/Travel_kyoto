@@ -11,8 +11,9 @@ class SpotController extends Controller
     //     $spot = Spot::find(2);
     //     return view('spots.index', compact('spots','spot'));
     // }
-    public function show(){
+    public function show($id){
         $spot = Spot::findOrFail($id);
+        dd($spot);
         return view('spots.show');
     }
 //     public function edit(int $id){
