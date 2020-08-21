@@ -17,19 +17,19 @@ class ReviewsTableSeeder extends Seeder
             [
                 'title' => 'オススメ',
                 'content'  => 'とてもいい場所でした。( ´∀｀ )',
-                'star'   => '4.5',
+                'star'   => 4.5,
                 'spot_id' => 1
             ],
             [
                 'title' => '旅行好きなら行ってみるべし。',
                 'content'  => '一生の思い出になります。是非行ってみてください。',
-                'star'   => '4.8',
+                'star'   => 4.5,
                 'spot_id' => 1
             ],
             [
                 'title' => '私にはつまらなかった',
                 'content'  => '二度と行きません',
-                'star'   => '2.7',
+                'star'   => 2.7,
                 'spot_id' => 1
             ],
         ];
