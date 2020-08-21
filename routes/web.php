@@ -21,11 +21,11 @@ Route::get('/', function () {
 // Route::get('/show', 'UserController@show')->name('show');
 
 
-Route::get('/user/{id}', 'MypageController@index');
+// Route::get('/user/{id}', 'MypageController@index');
 
 Route::get('user/{id}', 'MypageController@getUser')->name('users.mypage');
 
 Route::get('user/{id}/edit', 'MypageController@edit')->name('users.edit'); // 編集画面
 
-
+Route::put('user/{id}/update', 'MypageController@update')->name('users.update');
 
