@@ -12,7 +12,7 @@
 */
 
     
-Route::get('/', 'KyotoController@index')->name('kyoto.index');
+Route::get('/', 'SpotController@index')->name('spot.index');
 
 
 
