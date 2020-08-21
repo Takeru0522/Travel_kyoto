@@ -13,3 +13,4 @@
 
 Route::get('/spot/show', 'SpotController@show')->name('spots.show');
 // Route::get('kyoto/{id}/edit', 'SpotController@edit')->name('kyoto.edit');
+Route::post('/EDIT-PATH/store/{id}', 'EditController@store')->where('id', '[1-9][0-9]*');
