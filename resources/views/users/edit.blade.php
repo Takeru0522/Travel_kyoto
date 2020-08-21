@@ -11,13 +11,14 @@
     <section class="container m-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                {{-- @if($errors->any())
-                    <ul>
+                @if($errors->any())
+                    <ul>   <ul style="list-style: none">
                         @foreach($errors->all() as $message)
                         <li class="alert alert-danger">{{ $message }}</li>
-                        @endforeach --}}
-                    {{-- </ul>
-                @endif --}}
+                        
+                        @endforeach 
+                    </ul>
+                @endif
                 <form action="{{ route('users.update', ['id' => $user->id]) }}" method="post">
                     @csrf
                     @method('put')

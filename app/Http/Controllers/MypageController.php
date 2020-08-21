@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use App\Http\Requests\CreateMypage; 
 // use Auth;
 
 class MypageController extends Controller
@@ -36,7 +37,7 @@ class MypageController extends Controller
         'user' => $user,
     ]);
 }
-public function update(int $id, Request $request)
+public function update(int $id, CreateMypage $request)
 {
     $user = User::find($id);
 
@@ -56,7 +57,7 @@ public function index()
     // $data = ['msg' => '本一覧', 'books' => $books];
 
     // return view('users.mypage', $data);
-
+    // $diaries = Diary::orderBy('id', 'desc')->get();
     return view('users.mypage');
 }
 
