@@ -23,11 +23,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show()
-    {
-        // return view('users.show');
-        $users = User::find(1);
+    // public function show()
+    // {
+    //     // return view('users.show');
+    //     $users = User::find(1);
 
-        return view('users.show',['users' => $users]);
-    }
+    //     return view('users.show',['users' => $users]);
+    // }
 }

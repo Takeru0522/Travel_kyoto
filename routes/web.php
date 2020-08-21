@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 // Route::get('/user/{id}', 'MypageController@index');
 
-Route::get('user/{id}', 'MypageController@getUser')->name('users.mypage');
+Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
 
 Route::get('user/{id}/edit', 'MypageController@edit')->name('users.edit'); // 編集画面
 

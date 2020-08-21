@@ -16,7 +16,7 @@ class MypageController extends Controller
     //     $this->middleware('auth');
     // }
 
-     public function getUser($id)
+     public function mypage($id)
      {
     //    $profile = new User();
         $user = User::find($id);
@@ -29,7 +29,8 @@ class MypageController extends Controller
         // return view('mypage.mypage', ['profile' => $profile, 'id' => $id]);
     }
     public function edit(int $id)
-{
+{   
+ 
      //Diaryモデルを使用して、diariesテーブルから$idと一致するidをもつデータを取得
     $user = User::find($id); 
 
@@ -43,7 +44,7 @@ public function update(int $id, CreateMypage $request)
 
     $user->name = $request->name; //画面で入力されたタイトルを代入
     $user->email= $request->email; //画面で入力された本文を代入
-    // $user->img= 'img'; //画面で入力された本文を代入
+    $user->img= 'img'; //画面で入力された本文を代入
     $user->password= $request->password; 
     
     // dd($user);//画面で入力された本文を代入

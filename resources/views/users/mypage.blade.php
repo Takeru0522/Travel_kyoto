@@ -13,7 +13,7 @@
     <p>名前：{{ $user->name }}</p>
 
     <p>メールアドレス：{{ $user->email }}</p>
-    {{-- <p>{{ $user->img}}</p>   --}}
+     <p>写真：{{ $user->img}}</p>   
     
     <p>パスワード：{{ $user->password}}</p>  
  
