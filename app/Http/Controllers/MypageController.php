@@ -43,7 +43,7 @@ public function update(int $id, CreateMypage $request)
 
     $user->name = $request->name; //画面で入力されたタイトルを代入
     $user->email= $request->email; //画面で入力された本文を代入
-    $user->img= 'img'; //画面で入力された本文を代入
+    // $user->img= 'img'; //画面で入力された本文を代入
     $user->password= $request->password; 
     
     // dd($user);//画面で入力された本文を代入
