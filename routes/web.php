@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    
+Route::get('/', 'SpotController@index')->name('spot.index');
+
+
 
 Auth::routes();
 
