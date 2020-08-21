@@ -12,5 +12,6 @@
 */
 
 Route::get('/spot/show', 'SpotController@show')->name('spots.show');
-// Route::get('kyoto/{id}/edit', 'SpotController@edit')->name('kyoto.edit');
-Route::post('/EDIT-PATH/store/{id}', 'EditController@store')->where('id', '[1-9][0-9]*');
+Route::get('spot/{id}/edit', 'EditController@edit')->name('spots.edit'); // 編集画面
+Route::put('spot/{id}/update', 'EditController@update')->name('spots.update'); //更新処理
+

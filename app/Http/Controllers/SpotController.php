@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Spot;
+use App\Spot;
 class SpotController extends Controller
 {
     // public function index(){
@@ -12,7 +12,7 @@ class SpotController extends Controller
     //     return view('spots.index', compact('spots','spot'));
     // }
     public function show(){
-        // $spot = Spot::findOrFail($id);
+        $spot = Spot::findOrFail($id);
         return view('spots.show');
     }
 //     public function edit(int $id){
