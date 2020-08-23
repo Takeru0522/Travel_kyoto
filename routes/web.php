@@ -25,8 +25,7 @@ Route::get('/', 'SpotController@index')->name('spot.index');
 
 // Route::get('/show', 'UserController@show')->name('show');
 
-
-// Route::get('/user/{id}', 'MypageController@index');
+Route::get('user/{id}', 'MypageController@index')->name('users.mypage');
 
 Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
 
