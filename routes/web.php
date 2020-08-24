@@ -16,6 +16,10 @@ Route::get('/', 'SpotController@index')->name('spot.index');
 
 
 
+Route::group(['middleware' => 'auth'], function() {
+      Route::get('spot/create', 'SpotController@create')->name('spot.create');
+      Route::post('spot/create', 'SpotController@store')->name('spot.create');
+});
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
