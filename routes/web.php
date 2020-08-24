@@ -30,10 +30,17 @@ Route::get('/', 'SpotController@index')->name('spot.index');
 // Route::get('user/{id}', 'MypageController@index')->name('mypage');
 //  Route::get('user/{id}', 'MypageController@show')->name('mypage');
 
-Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
 
-Route::get('user/{id}/edit', 'MypageController@edit')->name('users.edit'); // 編集画面
+Route::group(['middleware' => 'auth'], function() {
+      Route::get('spot/create', 'SpotController@create')->name('spot.create');
+      Route::post('spot/create', 'SpotController@store')->name('spot.create');
+      Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
+      
+      Route::get('user/{id}/edit', 'MypageController@edit')->name('users.edit'); // 編集画面
+      
+      Route::put('user/{id}/update', 'MypageController@update')->name('users.update');
+});
+Auth::routes();
 
-Route::put('user/{id}/update', 'MypageController@update')->name('users.update');
 
 
