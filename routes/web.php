@@ -11,9 +11,11 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('common');
-// });
+ Route::get('/', function () {
+     return view('top');
+ });
+  Route::get('/home', 'HomeController@index')->name('home');
+
     
 Route::get('/', 'SpotController@index')->name('spot.index');
 
@@ -25,7 +27,8 @@ Route::get('/', 'SpotController@index')->name('spot.index');
 
 // Route::get('/show', 'UserController@show')->name('show');
 
-Route::get('user/{id}', 'MypageController@index')->name('users.mypage');
+Route::get('user/{id}', 'MypageController@index')->name('mypage');
+ Route::get('user/{id}', 'MypageController@show')->name('mypage');
 
 Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
 

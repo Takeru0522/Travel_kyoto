@@ -26,20 +26,24 @@
  
 
 {{-- <h1>{{ $msg }}</h1>  --}}
+
  <table border="1">
     <tr>
 
         <th>⭐️行きたいリスト</th>
         <th>⭐️行ったリスト</th>
     </tr>
-     @foreach ($wants as $want) 
+    <p>{{ $visit->spot_id }}</p>
+    <p>{{ $visit->user_id }}</p>
+    
+    {{-- @foreach ($wants as $want) 
     <div class="m-4 p-4 border border-primary">
     <tr>
          <td>{{ $want->user_id }}</td> 
-         <td>{{ $want->spot_id }}</td>
+         <td>{{ $want->spot_id }}</td> --}}
         
-    </tr> 
-     @endforeach   
+    {{-- </tr>  --}}
+     {{-- @endforeach    --}}
 </table>
 </body>
 </html> 

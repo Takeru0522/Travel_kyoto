@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 
  use App\SpotWantTo;
+ use App\SpotVisited;
 
 use App\Http\Requests\CreateMypage; 
 // use Auth;
@@ -18,6 +19,12 @@ class MypageController extends Controller
          $want = SpotWantTo::find($id);
          return view('users.mypage', [
             'want' => $want,
+        ]);}
+    public function show($id)
+    {
+         $visit = SpotVisited::find($id);
+         return view('users.mypage', [
+            'want' => $visit,
         ]);
        
     //  $wants = Spot::orderBy('id', 'desc')->get();
