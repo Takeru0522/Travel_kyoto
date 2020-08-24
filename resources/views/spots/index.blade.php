@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/app.css">
     <title>一覧表示画面</title>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">>
+    <link rel="stylesheet" href="/css/app.css"> 
 </head>
 <body>
+    <header>
+        <h1 class="headline">
+          <a>サンプルのサイト</a>
+        </h1>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a>Home</a>
+          </li>
+          <li class="nav-list-item">login</li>
+          <li class="nav-list-item">logout</li>
+        </ul>
+
+    </header>
+ 
     @foreach ($spots as $spot)
         <div class="m-4 p-4 border border-primary">
             <p>{{ $spot->name }}</p>

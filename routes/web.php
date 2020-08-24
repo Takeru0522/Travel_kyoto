@@ -12,10 +12,11 @@
 */
 
  Route::get('/', function () {
-     return view('top');
+     return view('common');
  });
   Route::get('/home', 'HomeController@index')->name('home');
 
+  Auth::routes();
     
 Route::get('/', 'SpotController@index')->name('spot.index');
 
@@ -23,12 +24,11 @@ Route::get('/', 'SpotController@index')->name('spot.index');
 
 
 // Route::get('/','UserController@show')->name('users.show');
-// Auth::routes();
 
 // Route::get('/show', 'UserController@show')->name('show');
 
-Route::get('user/{id}', 'MypageController@index')->name('mypage');
- Route::get('user/{id}', 'MypageController@show')->name('mypage');
+// Route::get('user/{id}', 'MypageController@index')->name('mypage');
+//  Route::get('user/{id}', 'MypageController@show')->name('mypage');
 
 Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
 

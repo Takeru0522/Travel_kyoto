@@ -10,42 +10,29 @@ use App\User;
  use App\SpotVisited;
 
 use App\Http\Requests\CreateMypage; 
-// use Auth;
+use Auth;
 
 class MypageController extends Controller
 {
-    public function index($id)
-    {
-         $want = SpotWantTo::find($id);
-         return view('users.mypage', [
-            'want' => $want,
-        ]);}
-    public function show($id)
-    {
-         $visit = SpotVisited::find($id);
-         return view('users.mypage', [
-            'want' => $visit,
-        ]);
-       
-    //  $wants = Spot::orderBy('id', 'desc')->get();
-        // return view('users.mypage');
-    // }
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-     }
-
+   
+   
     public function mypage($id)
     {
         // $profile = new User();
-        $user = User::find($id);
+        // $visit = SpotVisited::find($id);
+        // $want = SpotWantTo::find($id);
+        $user=Auth::user();
+        // $user = User::find($id);
+        dd($user);
 
         //  return view('users.mypage');
         return view('users.mypage', [
-            'user' => $user,
+            'user' => $user,  
         ]);
-        // $profile = Auth::user()->find(1);
-        // return view('mypage.mypage', ['profile' => $profile, 'id' => $id]);
+       
+        // return view('users.mypage', [
+        //     'user' => $user,  'visit' => $visit, 'want' => $want,
+        // ]);
     }
     public function edit(int $id)
     {

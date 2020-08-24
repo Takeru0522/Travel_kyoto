@@ -25,8 +25,8 @@ class VisitedSeeder extends Seeder
            foreach ($visits as $visit) {
   
               DB::table('spot_visited')->insert([
-                // 'spot_id' => $visit['spot_id'],
-                // 'user_id' => $visit['user_id'],
+                 'spot_id' => $visit['spot_id'],
+                'user_id' => $visit['user_id'],
                  
               ]);
     }}
