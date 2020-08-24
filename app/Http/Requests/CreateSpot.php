@@ -27,7 +27,6 @@ class CreateSpot extends FormRequest
             'name' => 'required|max:30', 
             'content' => 'required',
             'img' => 'required|max:255',
-            'user_id' => 'required',
         ];
     }
 }

@@ -34,8 +34,8 @@
                         <textarea class="form-control" name="location" id="location">{{ old('location') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="iflame_code">共有コード</label>
-                        <textarea class="form-control" name="iflame_code" id="iflame_code">{{ old('iflame_code') }}</textarea>
+                        <label for="iframe_code">共有コード</label>
+                        <textarea class="form-control" name="iframe_code" id="iframe_code">{{ old('iframe_code') }}</textarea>
                     </div>    
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">作成</button>
