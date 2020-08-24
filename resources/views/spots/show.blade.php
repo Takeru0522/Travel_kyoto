@@ -8,7 +8,8 @@
 <div class="container"> 
     <div class="bigbox">
         <div class="bigbox_left">
-            <p class="imgsize">{{ $spot->img }}</p>
+            <p class="imgsize"></p>
+            <img src="image.png" alt="清水寺の写真" title="清水寺">
             <p>{{ $spot->content}}</p>
         </div>
         <div class="bigbox_right">

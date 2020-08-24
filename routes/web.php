@@ -13,6 +13,6 @@
 
 
 
-Route::get('spots/{id}/edit', 'EditController@edit')->name('spots.edit'); // 編集画面
-Route::put('spots/{id}/update', 'EditController@update')->name('spots.update'); //更新処理
+Route::get('spots/{id}/edit', 'SpotController@edit')->name('spots.edit'); // 編集画面
+Route::put('spots/{id}/update', 'SpotController@update')->name('spots.update'); //更新処理
 Route::get('/spots/{id}', 'SpotController@show')->name('spots.show');
