@@ -22,16 +22,27 @@ class SpotController extends Controller
     }
     public function store(CreateSpot $request)
     {
-    $spot = new Spot();
+        $spot = new Spot();
+        $imgPath = $this->saveSpotImage($request['picture']);
+        $spot->name = $request->name;
+        $spot->content = $request->content;
+        $spot->picture_path = $imgPath;
+        $spot->location = $request->location;
+        $spot->iframe_code = $request->iframe_code;
+        $spot->user_id = Auth::user()->id;
+        $spot->save();
 
-    $spot->name = $request->name;
-    $spot->content = $request->content;
-    $spot->img = $request->img;
-    $spot->location = $request->location;
-    $spot->iframe_code = $request->iframe_code;
-    $spot->user_id = Auth::user()->id;
-    $spot->save();
+        return redirect()->route('spot.index');
+    }
+    private function saveSpotImage($image)
+    {
+        // デフォルトではstorage/appに画像が保存されます。 
+        // 第2引数にpublicをつけることで、storage/app/publicに保存されます。 
+        // 今回は、/images/profilePictureをつけて、
+        // storage/app/public/images/profilePictureに画像が保存されるようにしています。
+        // 自分で指定しない場合、ファイル名は自動で設定されます。  
+        $imgPath = $image->store('images/spotPicture', 'public');
 
-    return redirect()->route('spot.index');
+        return 'storage/' . $imgPath;
     }
 }

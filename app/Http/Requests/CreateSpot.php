@@ -26,7 +26,8 @@ class CreateSpot extends FormRequest
         return [
             'name' => 'required|max:30', 
             'content' => 'required',
-            'img' => 'required|max:255',
+            //'img' => 'required|max:255',
+            'picture' => 'required|max:2048',
         ];
     }
 }
