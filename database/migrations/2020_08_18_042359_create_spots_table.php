@@ -17,7 +17,6 @@ class CreateSpotsTable extends Migration
             $table->increments('id');
             $table->string('name', 30);
             $table->text('content');
-            $table->string('img', 255);
             $table->text('location')->nullable();
             $table->text('iframe_code')->nullable();
             $table->unsignedInteger('user_id');

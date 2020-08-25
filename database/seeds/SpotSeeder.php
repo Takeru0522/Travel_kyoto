@@ -32,7 +32,7 @@ class SpotSeeder extends Seeder
             DB::table('spots')->insert([
                 'name' => $kyoto['name'],
                 'content' => $kyoto['content'],
-                'img' => 'img/test.jpg',
+                'picture_path' => 'storage/images/profilePicture/default.jpg',
                 'location' =>$kyoto['location'],
                 'iframe_code' => 'testtesttest',
                 'user_id' => $user->id,
