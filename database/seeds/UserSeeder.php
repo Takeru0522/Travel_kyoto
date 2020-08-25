@@ -41,6 +41,7 @@ class UserSeeder extends Seeder
                 'email' => $user['email'],
                 'password'=> bcrypt($user['password']),
                 'img' => 'img/test.jpg',
+                'picture_path' => 'storage/images/profilePicture/default.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

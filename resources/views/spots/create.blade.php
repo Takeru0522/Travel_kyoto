@@ -15,7 +15,7 @@
                      @endforeach
                    </ul>
                 @endif
-                <form action="{{ route('spot.create') }}" method="POST">
+                <form action="{{ route('spot.create') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="name">観光地名</label>
@@ -26,9 +26,10 @@
                         <textarea class="form-control" name="content" id="content">{{ old('content') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="img">写真</label>
-                        <input type="text" class="form-control" name="img" id="img" value="{{ old('img') }}"/>
-                    </div>
+                        <label for="picture">写真</label>
+                            <input id="picture" type="file" name="picture"
+                              class="form-control" value="{{ old('picture') }}"/>
+                    </div>        
                     <div class="form-group">
                         <label for="location">所在地</label>
                         <textarea class="form-control" name="location" id="location">{{ old('location') }}</textarea>
