@@ -41,6 +41,7 @@ class SpotController extends Controller
     }
     public function edit(int $id){
         $spot = Spot::find($id);
+        // dd($spot);
         return view('spots.edit', ['spot' => $spot]);
         
 }
@@ -49,16 +50,13 @@ class SpotController extends Controller
     
     $spot = Spot::find($id);
     
-    $spot->title = $request->title; //画面で入力されたタイトルを代入
-    $spot->body = $request->body; //画面で入力された本文を代入
     $spot->name = $request->name;
     $spot->content = $request->content;
     $spot->img = $request->img;
     $spot->location = $request->location;
     $spot->iframe_code = $request->iframe_code;
     $spot->user_id = Auth::user()->id;
-    
-    $spot->save(); //DBに保存
+    $spot->save();
 
     return redirect()->route('spots.update'); //一覧ページにリダイレクト
 }
