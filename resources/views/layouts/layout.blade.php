@@ -17,7 +17,9 @@
         justify-content: space-between;
 }
         .bigbox_left{
-            width: 45%;
+            width: 30%;
+            padding: 10px;
+            
         }
         .bigbox_right{
             width: 45%;
