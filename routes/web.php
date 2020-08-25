@@ -12,6 +12,19 @@
 */
 
 
+    
+Route::get('/', 'SpotController@index')->name('spot.index');
+
+
+
+// Route::get('/','UserController@show')->name('users.show');
+// Auth::routes();
+
+// Route::get('/show', 'UserController@show')->name('show');
+
+
+// Route::get('/user/{id}', 'MypageController@index');
+
 
    Auth::routes();
     
@@ -24,8 +37,7 @@
    //  Route::get('user/{id}', 'MypageController@show')->name('mypage');
    
    
-   
-   Route::group(['middleware' => 'auth'], function() {
+ Route::group(['middleware' => 'auth'], function() {
 
 
       Route::get('/', 'SpotController@index')->name('spot.index');
@@ -42,4 +54,10 @@
       Route::get('/review', 'ReviewController@index')->name('review.index'); 
       Route::get('review/create', 'ReviewController@create')->name('review.create'); // 投稿画面
       Route::post('review/create', 'ReviewController@store')->name('review.create'); // 保存処理
-       });
+      Route::get('spots/{id}/edit', 'SpotController@edit')->name('spots.edit'); // 編集画面
+      Route::put('spots/{id}/update', 'SpotController@update')->name('spots.update'); //更新処理
+      Route::get('/spots/{id}', 'SpotController@show')->name('spots.show');
+      
+});
+      
+
