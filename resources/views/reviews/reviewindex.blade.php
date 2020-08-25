@@ -11,7 +11,7 @@
     <title>口コミ一覧表示画面</title>
 </head>
 <body>
-    <a href="{{ route('review.create') }}" class="btn btn-primary btn-block">
+    <a href="{{ route('spot.create') }}" class="btn btn-primary btn-block">
         新規投稿
     </a>
 

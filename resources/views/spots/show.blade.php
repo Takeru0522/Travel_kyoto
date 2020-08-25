@@ -46,7 +46,17 @@
             <p class="reviewimg">投稿画像</p>
     　</div>
             
-        　　　　　
+    　　　@foreach ($reviews as $review)
+    <div class="m-4 p-4 border border-primary">
+        <p>{{ $review->title }}</p>
+        <p>{{ $review->content }}</p>
+        <p>{{ $review->star}}</p>
+        <p>{{ $review->img }}</p>
+        <p>{{ $review->spot_id}}</p>
+        <p>{{ $review->user_id }}</p>
+        <p>{{ $review->created_at}}</p>
+    </div>
+@endforeach　　
             
                 
     </div>

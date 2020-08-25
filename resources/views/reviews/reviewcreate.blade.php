@@ -11,7 +11,7 @@
     <section class="container m-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <form action="{{ route('review.create') }}" method="POST">
+                <form action="{{ route('spot.create') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="title">タイトル</label>
