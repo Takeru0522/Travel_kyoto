@@ -42,6 +42,7 @@ class ReviewsTableSeeder extends Seeder
                 'star'   => $review['star'],
                 'img' => 'img/test.jpg',
                 'spot_id' => $review['spot_id'],
+                // 'user_id' => $review['user_id'],
                 'user_id' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

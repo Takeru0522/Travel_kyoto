@@ -23,17 +23,17 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                        <label for="title">名前</label>
-                        <input type="text" class="form-control" name="name" id="title" value="{{ old('name', $user->name) }}">
+                        <label for="name">名前</label>
+                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name', $user->name) }}">
                     </div>
                     <div class="form-group">
-                        <label for="title">メールアドレス</label>
-                        <textarea class="form-control" name="email" id="text">{{ old('email', $user->email) }}</textarea>
+                        <label for="email">メールアドレス</label>
+                        <textarea class="form-control" name="email" id="eamil">{{ old('email', $user->email) }}</textarea>
                     </div>
                     <!--
                     <div class="form-group">
                         <label for="title">パスワード</label>
-                        <textarea class="form-control" name="password" id="text">{{ old('password', $user->password) }}</textarea>
+                        {{-- <textarea class="form-control" name="password" id="text">{{ old('password', $user->password) }}</textarea> --}}
                     </div>
                     -->
                     <div class="text-right">
