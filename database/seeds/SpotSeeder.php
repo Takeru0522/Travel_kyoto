@@ -16,7 +16,8 @@ class SpotSeeder extends Seeder
             [
                 'name' => '清水寺',
                 'content'  => '飛び降りる気持ちで',
-                'location' => '京都府'
+                'location' => '京都府',
+                'address' => '住所'
             ],
             [
                 'name' => '金閣寺',
@@ -37,6 +38,7 @@ class SpotSeeder extends Seeder
                 'user_id' => $user->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
+                
             ]);
         }
     }
