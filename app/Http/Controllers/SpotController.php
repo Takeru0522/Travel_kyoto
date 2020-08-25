@@ -32,6 +32,7 @@ class SpotController extends Controller
         $spot->user_id = Auth::user()->id;
         $spot->save();
 
+
         return redirect()->route('spot.index');
     }
     private function saveSpotImage($image)
@@ -45,4 +46,32 @@ class SpotController extends Controller
 
         return 'storage/' . $imgPath;
     }
+    public function show($id){
+        $spot = Spot::findOrFail($id);
+        return view('spots.show',['spot' => $spot]);
+    }
+    public function edit(int $id){
+        $spot = Spot::find($id);
+        return view('spots.edit', ['spot' => $spot]);
+        
 }
+    public function update(int $id, CreateSpot $request)
+{
+    
+    $spot = Spot::find($id);
+    
+    $spot->title = $request->title; //画面で入力されたタイトルを代入
+    $spot->body = $request->body; //画面で入力された本文を代入
+    $spot->name = $request->name;
+    $spot->content = $request->content;
+    $spot->img = $request->img;
+    $spot->location = $request->location;
+    $spot->iframe_code = $request->iframe_code;
+    $spot->user_id = Auth::user()->id;
+    
+    $spot->save(); //DBに保存
+
+    return redirect()->route('spots.update'); //一覧ページにリダイレクト
+}
+}
+
