@@ -23,7 +23,7 @@
                      @endforeach
                    </ul>
                 @endif --}}
-                <form action="{{ route('spots.update',['id' => $spot->id]) }}" method="POST"　enctype="multipart/form-data">
+                <form action="{{ route('spots.update',['id' => $spot->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="form-group">

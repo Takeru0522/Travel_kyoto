@@ -58,11 +58,11 @@ class SpotController extends Controller
 }
     public function update(int $id, CreateSpot $request)
 {
-    dd($request);
+    // dd($request);
     $spot = Spot::find($id);
     
     $imgPath = $this->saveSpotImage($request['picture_path']);
-    dd($imgPath);
+    // dd($imgPath);
     $spot->name = $request->name;
     $spot->content = $request->content;
     $spot->picture_path = $imgPath;
