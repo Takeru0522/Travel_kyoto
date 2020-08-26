@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- <link rel="stylesheet" href="/css/main.css"> --}}
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>新規投稿画面</title>
 </head>
 <body>
@@ -30,33 +31,32 @@
                         <textarea class="form-control" name="content" id="content">{{ old('content') }}</textarea>
                     </div>
                     <div class="form-group">
-                        {{-- <label for="star">星</label>
-                        <div v-for="star in [5,4,3,2,1]">
-                            <input v-model="reviewParams.stars" type="star" :value="star">
-                            <v-star :value="star">{{ old('star') }}</v-star>
-                        </div> --}}
-                    {{-- </div> <input type="star" class="form-control" name="star" id="star" value="{{ old('star') }}"/> --}}
-                    <p><span class="star5_rating" data-rate="4"></span>
-                    </p>
-                    <p>
-                        <span class="star5_rating" data-rate="2.5"></span>
-                    </p>
-                    <p><span class="star5_rating" data-rate="5"></span> 星5</p>
-                    <p><span class="star5_rating" data-rate="4.5"></span> 星4.5</p>
-                    <p><span class="star5_rating" data-rate="4"></span> 星4</p>
-                    <p><span class="star5_rating" data-rate="3.5"></span> 星3.5</p>
-                    <p><span class="star5_rating" data-rate="3"></span> 星3</p>
-                    <p><span class="star5_rating" data-rate="2.5"></span> 星2.5</p>
-                    <p><span class="star5_rating" data-rate="2"></span> 星2</p>
-                    <p><span class="star5_rating" data-rate="1.5"></span> 星1.5</p>
-                    <p><span class="star5_rating" data-rate="1"></span> 星1</p>
-                    <p><span class="star5_rating" data-rate="0.5"></span> 星0.5</p>
-                    <p><span class="star5_rating" data-rate="0"></span> 星0</p>
-                    </div>
+                        
+                        <label for="star">星</label>
+                        <input type="number" step="0.1" class="form-control" name="title" id="title" value="{{ old('title') }}"/>   
+                        
+                           <select name="blood">
+                           <option value="0">0</option>
+                           <option value="0.5">0.5</option>
+                           <option value="1">1⭐</option>
+                           <option value="1.5">1.5⭐</option>
+                           <option value="2">2⭐⭐</option>
+                           <option value="2.5">2.5⭐⭐</option>
+                           <option value="3">3⭐⭐⭐</option>
+                           <option value="3.5">3.5⭐⭐⭐</option>
+                           <option value="4">4⭐⭐⭐⭐</option>
+                           <option value="4.5">4.5⭐⭐⭐⭐</option>
+                           <option value="5">5⭐⭐⭐⭐⭐</option> 
+                           </div>  
+                    {{-- <input type="number" class="form-control" name="star" id="star" value="{{ old('star') }}"/> 
+                    <p>星 ：<br> --}}
+
+                    </select></p>
                     <div class="form-group">
-                        <label for="img">画像</label>
-                        <input type="text" class="form-control" name="img" id="img" value="{{ old('img') }}"/>
-                    </div>
+                        <label for="picture">写真</label>
+                            <input id="picture" type="file" name="picture"
+                              class="form-control" value="{{ old('picture') }}"/>
+                    </div>  
 
 
                     <div class="text-right">

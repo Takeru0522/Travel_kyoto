@@ -5,17 +5,17 @@
 @endsection
 @section('content')
 <a href="{{ route('review.create') }}" class="btn btn-primary btn-block">
-    新規投稿
+    口コミ新規投稿
 </a>
 <div class="container"> 
     <div class="bigbox">
         <div class="bigbox_left">
             <p class="imgsize"></p>
             <img src="image.png" alt="清水寺の写真" title="清水寺">
-            {{-- <p>{{ $spot->content}}</p>
+            {{-- <p>{{ $spot->content}}</p> 
         </div>
         <div class="bigbox_right">
-            <p class="spotname">{{$spot->name}}</p> --}}
+            <p class="spotname">{{$spot->name}}</p>   --}}
             <div class="rightbox">
                 <div class="rightbigbox">
                     <div class="rightbox_left">
@@ -60,11 +60,19 @@
         <p>{{ $review->spot_id}}</p>
         <p>{{ $review->user_id }}</p>
         <p>{{ $review->created_at}}</p>
+        {{-- @if (Auth::check() && Auth::user()->id === $review->user_id) --}}
+        <a class="btn btn-success" href="{{ route('review.edit', ['id' => $review->id]) }}">編集</a>
         <form action="{{ route('review.destroy', ['id' => $review->id]) }}" method="POST" class="d-inline">
             @csrf
             @method('delete')
             <button class="btn btn-danger">削除</button>
         </form>
+        {{-- @endif  --}}
+    </div>
+    <div class=" mt-3 ml-3">
+        <i class="far fa-heart fa-lg text-danger js-like"></i>
+        <input class="review-id" type="hidden" value="{{ $review->id }}">
+        <span class="js-like-num">200</span>
     </div>
 @endforeach　　
             
