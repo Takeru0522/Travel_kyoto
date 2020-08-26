@@ -26,7 +26,7 @@ class SpotController extends Controller
         $imgPath = $this->saveSpotImage($request['picture']);
         $spot->name = $request->name;
         $spot->content = $request->content;
-        $spot->picture_path = $imgPath;
+        $spot->picture_path = $picture_path;
         $spot->location = $request->location;
         $spot->iframe_code = $request->iframe_code;
         $spot->user_id = Auth::user()->id;
@@ -42,7 +42,7 @@ class SpotController extends Controller
         // 今回は、/images/profilePictureをつけて、
         // storage/app/public/images/profilePictureに画像が保存されるようにしています。
         // 自分で指定しない場合、ファイル名は自動で設定されます。  
-        $imgPath = $image->store('images/spotPicture', 'public');
+        $$imgPath = $image->store('images/spotPicture', 'public');
 
         return 'storage/' . $imgPath;
     }
@@ -58,18 +58,20 @@ class SpotController extends Controller
 }
     public function update(int $id, CreateSpot $request)
 {
-    
+    dd($request);
     $spot = Spot::find($id);
     
+    $imgPath = $this->saveSpotImage($request['picture_path']);
+    dd($imgPath);
     $spot->name = $request->name;
     $spot->content = $request->content;
-    $spot->img = $request->img;
+    $spot->picture_path = $imgPath;
     $spot->location = $request->location;
     $spot->iframe_code = $request->iframe_code;
     $spot->user_id = Auth::user()->id;
     $spot->save();
 
-    return redirect()->route('spots.update'); //一覧ページにリダイレクト
+    return redirect()->route('spot.index'); //一覧ページにリダイレクト
 }
 }
 

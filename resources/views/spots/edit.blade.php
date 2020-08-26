@@ -36,16 +36,16 @@
                         <textarea class="form-control" name="content" id="content">{{ old('content',$spot->content) }}</textarea>
                     </div>
                     <div class="form-group ">
-                        <label for="picture">写真</label>
+                        <label for="picture_path">写真</label>
 
                         
-                            <input id="picture" type="file" name="picture"
-                              class="form-control{{ $errors->has('picture') ? ' is-invalid' : '' }}"
+                            <input id="picture_path" type="file" name="picture_path"
+                              class="form-control{{ $errors->has('picture_path') ? ' is-invalid' : '' }}"
                             >
 
-                            @if ($errors->has('picture'))
+                            @if ($errors->has('picture_path'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('picture') }}</strong>
+                                    <strong>{{ $errors->first('picture_path') }}</strong>
                                 </span>
                             @endif
                         
@@ -62,24 +62,7 @@
                         <textarea class="form-control" name="iflame_code" id="iflame_code">{{ old('iflame_code',$spot->iflame_code) }}</textarea>
                     </div>    
                     
-                     <p>あなたがこの観光地に対する五段階評価をしてください</p>
-                        <p>
-                            <span class="star5_rating" data-rate="4"></span>
-                        </p>
-                        <p>
-                            <span class="star5_rating" data-rate="2.5"></span>
-                        </p>
-                        <p><span class="star5_rating" data-rate="5"></span> 星5</p>
-                        <p><span class="star5_rating" data-rate="4.5"></span> 星4.5</p>
-                        <p><span class="star5_rating" data-rate="4"></span> 星4</p>
-                        <p><span class="star5_rating" data-rate="3.5"></span> 星3.5</p>
-                        <p><span class="star5_rating" data-rate="3"></span> 星3</p>
-                        <p><span class="star5_rating" data-rate="2.5"></span> 星2.5</p>
-                        <p><span class="star5_rating" data-rate="2"></span> 星2</p>
-                        <p><span class="star5_rating" data-rate="1.5"></span> 星1.5</p>
-                        <p><span class="star5_rating" data-rate="1"></span> 星1</p>
-                        <p><span class="star5_rating" data-rate="0.5"></span> 星0.5</p>
-                        <p><span class="star5_rating" data-rate="0"></span> 星0</p>
+                     
                     
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">編集</button>
