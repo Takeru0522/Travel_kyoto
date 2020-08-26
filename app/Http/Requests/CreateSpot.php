@@ -24,10 +24,10 @@ class CreateSpot extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:30', 
+            'name' => 'required|max:30',
             'content' => 'required',
             //'img' => 'required|max:255',
-            'picture' => 'required|max:2048',
+            // 'picture_path' => 'required|max:2048',
         ];
     }
 }

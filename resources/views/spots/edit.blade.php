@@ -16,13 +16,14 @@
      <section class="container m-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                {{-- @if($errors->any())
+                @if($errors->any())
                    <ul>
                      @foreach($errors->all() as $message)
                          <li class="alert alert-danger">{{ $message }}</li>
                      @endforeach
                    </ul>
-                @endif --}}
+
+                @endif
                 <form action="{{ route('spots.update',['id' => $spot->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
@@ -30,15 +31,22 @@
                         <label for="name">観光地名</label>
                         <input type="text" class="form-control" name="name" id="name" value="{{ old('name',$spot->name) }}"/>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="content">紹介文</label>
                         <textarea class="form-control" name="content" id="content">{{ old('content',$spot->content) }}</textarea>
                     </div>
-                    <div class="form-group ">
+
+                    <div class="form-group">
+                        <label for="picture_path">写真</label>
+                        <input id="picture_path" type="file" name="picture_path"
+                        class="form-control" value="{{ old('picture_path') }}"/>
+                    </div>
+
+                    {{-- <div class="form-group ">
                         <label for="picture_path">写真</label>
 
-                        
+
                             <input id="picture_path" type="file" name="picture_path"
                               class="form-control{{ $errors->has('picture_path') ? ' is-invalid' : '' }}"
                             >
@@ -48,22 +56,22 @@
                                     <strong>{{ $errors->first('picture_path') }}</strong>
                                 </span>
                             @endif
-                        
-                    </div>
-                        
-                        
+
+                    </div> --}}
+
+
                     <div class="form-group">
                         <label for="location">所在地</label>
                         <textarea class="form-control" name="location" id="location">{{ old('location',$spot->location) }}</textarea>
                     </div>
-                    
+
                     <div class="form-group">
-                        <label for="iflame_code">共有コード</label>
-                        <textarea class="form-control" name="iflame_code" id="iflame_code">{{ old('iflame_code',$spot->iflame_code) }}</textarea>
-                    </div>    
-                    
-                     
-                    
+                        <label for="iframe_code">共有コード</label>
+                        <textarea class="form-control" name="iframe_code" id="iframe_code">{{ old('iframe_code',$spot->iframe_code) }}</textarea>
+                    </div>
+
+
+
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">編集</button>
                     </div>
@@ -71,6 +79,7 @@
             </div>
         </div>
     </section>
+
 
 </body>
 </html>
