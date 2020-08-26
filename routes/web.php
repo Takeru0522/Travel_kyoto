@@ -14,6 +14,8 @@
     
 Route::get('/', 'SpotController@index')->name('spot.index');
 
+Route::post('/', 'SpotController@search')->name('spot.search');
+
 
 
 Route::group(['middleware' => 'auth'], function() {

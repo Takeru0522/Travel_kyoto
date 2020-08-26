@@ -45,4 +45,31 @@ class SpotController extends Controller
 
         return 'storage/' . $imgPath;
     }
+    public function search(Request $request) {
+        
+        dd($request);
+        
+        if(!empty($keyword_name) && empty($keyword_location) && empty($keyword_created_at)) {
+            $query = Spot::query();
+            $spots = $query->where('name','like', '%' .$keyword_name. '%')->get();
+            //return redirect()->route('spot.index');
+          }
+          if(empty($keyword_name) && !empty($keyword_location) && empty($keyword_created_at)) {
+            $query = Spot::query();
+            $spots = $query->where('location','like', '%' .$keyword_location. '%')->get();
+            //return redirect()->route('spot.index');
+          }
+        if(empty($keyword_name) && empty($keyword_location) && !empty($keyword_created_at)) {
+            $query = Spot::query();
+            $spots = $query->where('created_at','like', '%' .$keyword_created_at. '%')->get();
+            //return redirect()->route('spot.index');
+          }
+        else {
+            //return redirect()->route('spot.index');
+            }
+        
+
+
+
+    }    
 }
