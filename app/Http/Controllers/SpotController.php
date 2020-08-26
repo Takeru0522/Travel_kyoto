@@ -18,39 +18,37 @@ public function index()
         // $reviews = Review::orderBy('id', 'desc')->get();
        
 
-        return view('spots.show',['spots' => $spots]);
-        // ['reviews' => $reviews]
-
+        return view('spots.index',['spots' => $spots]);
     }
-public function create()
-{
-    return view('spots.create');
-}
-public function store(CreateSpot $request)
-{
-    
-    $spot = new Spot();
-    
-    $spot->name = $request->name;
-    $spot->content = $request->content;
-    $spot->img = $request->img;
-    $spot->location = $request->location;
-    $spot->iframe_code = $request->iframe_code;
-    $spot->user_id = Auth::user()->id;
-    $spot->save();
-    
-     return redirect()->route('spots.index');
+    public function create()
+    {
+        return view('spots.create');
+    }
+    public function store(CreateSpot $request)
+    {
+        $spot = new Spot();
+        $imgPath = $this->saveSpotImage($request['picture']);
+        $spot->name = $request->name;
+        $spot->content = $request->content;
+        $spot->picture_path = $imgPath;
+        $spot->location = $request->location;
+        $spot->iframe_code = $request->iframe_code;
+        $spot->user_id = Auth::user()->id;
+        $spot->save();
 
 
-    // $review = new Review(); //Diaryモデルをインスタンス化
-    
-    // $review->title = $request->title; //画面で入力されたタイトルを代入
-    // $review->content = $request->content; //画面で入力された本文を代入
-    // $review->star = $request->star; //画面で入力された本文を代入
-    // $review->img = $request->img; //画面で入力された本文を代入
-    // $review->save(); //DBに保存
-    
-    // return redirect()->route('spots.show'); //
+        return redirect()->route('spot.index');
+    }
+    private function saveSpotImage($image)
+    {
+        // デフォルトではstorage/appに画像が保存されます。 
+        // 第2引数にpublicをつけることで、storage/app/publicに保存されます。 
+        // 今回は、/images/profilePictureをつけて、
+        // storage/app/public/images/profilePictureに画像が保存されるようにしています。
+        // 自分で指定しない場合、ファイル名は自動で設定されます。  
+        $imgPath = $image->store('images/spotPicture', 'public');
+
+        return 'storage/' . $imgPath;
     }
 public function show($id){
         $spot = Spot::findOrFail($id);

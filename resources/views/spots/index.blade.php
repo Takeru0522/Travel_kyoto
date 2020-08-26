@@ -13,7 +13,7 @@
     <div class="m-4 p-4 border border-primary">
             <p>{{ $spot->name }}</p>
             <p>{{ $spot->content }}</p>
-            <p>{{ $spot->img }}</p>
+            <img src="{{ $spot->picture_path }}">
             <p>{{ $spot->location }}</p>
             <p>{{ $spot->iflame_code }}</p>
             <p>{{ $spot->created_at }}</p>
