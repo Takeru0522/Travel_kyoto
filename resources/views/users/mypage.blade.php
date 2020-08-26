@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-    　　<h2>マイページ</h2>
+    <h2>マイページ</h2>
 
-    <p>名前：{{ $user->name }}</p>
+    <p>名前：{{ $users->name }}</p>
 
-    <p>メールアドレス：{{ $user->email }}</p>
-    <p>写真：{{ $user->img}}</p>   
+    <p>メールアドレス：{{ $users->email }}</p>
+    <p>写真：{{ $users->img}}</p>   
     
     {{-- <p>パスワード：{{ $user->password}}</p> --}}
  
@@ -22,7 +22,7 @@
         {{-- プロフィール写真→{{$profile->image}} --}}
         {{-- 性別→{{$profile->gender}}
         居住地→{{$profile->prefecture}} --}}
-    <a class="btn btn-success" href="{{ route('users.edit', ['id' => $user->id]) }}">編集</a>
+    <a class="btn btn-success" href="{{ route('users.edit', ['id' => $users->id]) }}">編集</a>
  
     <pre>
         {{-- <h1>{{ $msg }}</h1> --}}
@@ -31,6 +31,10 @@
     <tr>
         <th>⭐️行きたいリスト</th>
         <th>⭐️行ったリスト</th>
+    </tr>
+    <tr>
+        <th>{{ $visit_spots }}</th>
+        <th>{{ $want_spots }}</th>
     </tr>
     {{-- @foreach ($books as $book)
     <tr>

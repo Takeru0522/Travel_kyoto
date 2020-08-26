@@ -12,9 +12,8 @@
 */
 
 
-    
-Route::get('/', 'SpotController@index')->name('spot.index');
 
+Route::get('/', 'SpotController@index')->name('spot.index');
 
 
 // Route::get('/','UserController@show')->name('users.show');
@@ -27,18 +26,18 @@ Route::get('/', 'SpotController@index')->name('spot.index');
 
 
 Route::group(['middleware' => 'auth'], function() {
-      Route::get('spot/create', 'SpotController@create')->name('spot.create');
-      Route::post('spot/create', 'SpotController@store')->name('spot.create');
-      Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
-      
-      Route::get('user/{id}/edit', 'MypageController@edit')->name('users.edit'); // 編集画面
-      
-      Route::put('user/{id}/update', 'MypageController@update')->name('users.update');
-      Route::get('spots/{id}/edit', 'SpotController@edit')->name('spots.edit'); // 編集画面
-      Route::put('spots/{id}/update', 'SpotController@update')->name('spots.update'); //更新処理
+    Route::get('spot/create', 'SpotController@create')->name('spot.create');
+    Route::post('spot/create', 'SpotController@store')->name('spot.create');
+    Route::get('spots/{id}/edit', 'SpotController@edit')->name('spots.edit'); // 編集画面
+    Route::put('spots/{id}/update', 'SpotController@update')->name('spots.update');
+
 });
 Route::get('/spots/{id}', 'SpotController@show')->name('spots.show');
 Auth::routes();
+
+Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
+Route::get('user/{id}/edit', 'MypageController@edit')->name('users.edit'); // 編集画面
+Route::put('user/{id}/update', 'MypageController@update')->name('users.update');
 
 
 

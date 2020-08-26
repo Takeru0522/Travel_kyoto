@@ -6,27 +6,33 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+ use App\SpotWantTo;
+ use App\SpotVisited;
+
 use App\Http\Requests\CreateMypage; 
-// use Auth;
+use Auth;
 
 class MypageController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
+   
+   
     public function mypage($id)
     {
         // $profile = new User();
+         $visit = SpotVisited::find($id);
+         $want = SpotWantTo::find($id);
+        // $user=Auth::user();
         $user = User::find($id);
+        // dd($user);
 
         //  return view('users.mypage');
         return view('users.mypage', [
-            'user' => $user,
+            'user' => $user,  'want' => $want,
         ]);
-        // $profile = Auth::user()->find(1);
-        // return view('mypage.mypage', ['profile' => $profile, 'id' => $id]);
+       
+        // return view('users.mypage', [
+        //     'user' => $user,  'visit' => $visit, 'want' => $want,
+        // ]);
     }
     public function edit(int $id)
     {
@@ -49,15 +55,6 @@ class MypageController extends Controller
 
         return redirect()->route('users.mypage', ['user' => $user]); //一覧ページにリダイレクト
         // return view('users.mypage');
-    }
-    public function index()
-    {
-        // $books = Book::all();
-        // $data = ['msg' => '本一覧', 'books' => $books];
-
-        // return view('users.mypage', $data);
-        // $diaries = Diary::orderBy('id', 'desc')->get();
-        return view('users.mypage');
     }
 
 
