@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\SpotWantTo;
+use App\SpotVisited;
 
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\CreateMypage; 
-// use Auth;
+use Auth;
 
 class MypageController extends Controller
 {
@@ -20,10 +23,17 @@ class MypageController extends Controller
     {
         // $profile = new User();
         $user = User::find($id);
+        $visit = DB::table('spot_visited')->where('user_id', $id)->value('spot_id');
+        $want = DB::table('spot_want_to')->where('user_id', $id)->value('spot_id');
+
+        $visit_spot = DB::table('spots')->where('id', $visit)->value('name');
+        $want_spot = DB::table('spots')->where('id', $want)->value('name');
 
         //  return view('users.mypage');
-        return view('users.mypage', [
-            'user' => $user,
+        return view('users.mypage')->with([
+            'users' => $user,
+            'visit_spots' => $visit_spot,
+            'want_spots' => $want_spot,
         ]);
         // $profile = Auth::user()->find(1);
         // return view('mypage.mypage', ['profile' => $profile, 'id' => $id]);

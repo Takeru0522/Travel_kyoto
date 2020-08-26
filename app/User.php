@@ -30,10 +30,10 @@ class User extends Authenticatable
 
     public function spots()
     {
-    return $this->hasMany('App\Spot');
+        return $this->hasMany('App\Spot');
     }
-    // public function reviews()
-    // {
-    // return $this->hasMany('App\Review');
-    // }
+    public function reviews()
+    {
+        return $this->hasMany('App\Review');
+    }
 }
