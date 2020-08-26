@@ -26,9 +26,9 @@
         <th>⭐️行きたいリスト</th>
         <th>⭐️行ったリスト</th>
      </tr>
-    {{-- <p>{{ $want->spot_id }}</p>
+    <p>{{ $want->spot_id }}</p>
     <p>{{ $want->user_id }}</p>
-     --}} 
+     
     {{-- @foreach ($wants as $want) 
     <div class="m-4 p-4 border border-primary">
     <tr>

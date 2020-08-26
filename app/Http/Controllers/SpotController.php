@@ -14,12 +14,12 @@ class SpotController extends Controller
 public function index()
     {
         $spots = Spot::all(); 
-        $reviews = Review::all();
-        $reviews = Review::orderBy('id', 'desc')->get();
+        // $reviews = Review::all();
+        // $reviews = Review::orderBy('id', 'desc')->get();
        
 
-        return view('spots.show',['spots' => $spots],['reviews' => $reviews]);
-
+        return view('spots.show',['spots' => $spots]);
+        // ['reviews' => $reviews]
 
     }
 public function create()
@@ -39,18 +39,18 @@ public function store(CreateSpot $request)
     $spot->user_id = Auth::user()->id;
     $spot->save();
     
-     return redirect()->route('spot.index');
+     return redirect()->route('spots.index');
 
 
-    $review = new Review(); //Diaryモデルをインスタンス化
+    // $review = new Review(); //Diaryモデルをインスタンス化
     
-    $review->title = $request->title; //画面で入力されたタイトルを代入
-    $review->content = $request->content; //画面で入力された本文を代入
-    $review->star = $request->star; //画面で入力された本文を代入
-    $review->img = $request->img; //画面で入力された本文を代入
-    $review->save(); //DBに保存
+    // $review->title = $request->title; //画面で入力されたタイトルを代入
+    // $review->content = $request->content; //画面で入力された本文を代入
+    // $review->star = $request->star; //画面で入力された本文を代入
+    // $review->img = $request->img; //画面で入力された本文を代入
+    // $review->save(); //DBに保存
     
-    return redirect()->route('spots.show'); //
+    // return redirect()->route('spots.show'); //
     }
 public function show($id){
         $spot = Spot::findOrFail($id);

@@ -19,15 +19,15 @@ class MypageController extends Controller
     public function mypage($id)
     {
         // $profile = new User();
-        // $visit = SpotVisited::find($id);
-        // $want = SpotWantTo::find($id);
-        $user=Auth::user();
-        // $user = User::find($id);
-        dd($user);
+         $visit = SpotVisited::find($id);
+         $want = SpotWantTo::find($id);
+        // $user=Auth::user();
+        $user = User::find($id);
+        // dd($user);
 
         //  return view('users.mypage');
         return view('users.mypage', [
-            'user' => $user,  
+            'user' => $user,  'want' => $want,
         ]);
        
         // return view('users.mypage', [

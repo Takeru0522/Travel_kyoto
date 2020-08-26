@@ -1,19 +1,21 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('title')
    
 @endsection
 @section('content')
-
+<a href="{{ route('review.create') }}" class="btn btn-primary btn-block">
+    新規投稿
+</a>
 <div class="container"> 
     <div class="bigbox">
         <div class="bigbox_left">
             <p class="imgsize"></p>
             <img src="image.png" alt="清水寺の写真" title="清水寺">
-            <p>{{ $spot->content}}</p>
+            {{-- <p>{{ $spot->content}}</p>
         </div>
         <div class="bigbox_right">
-            <p class="spotname">{{$spot->name}}</p>
+            <p class="spotname">{{$spot->name}}</p> --}}
             <div class="rightbox">
                 <div class="rightbigbox">
                     <div class="rightbox_left">
@@ -45,7 +47,10 @@
         　 <p class="reviewtext">観光地のクチコミ内容がここに入ります</p>
             <p class="reviewimg">投稿画像</p>
     　</div>
-            
+    <a href="{{ route('spot.create') }}" class="btn btn-primary btn-block">
+        新規投稿
+    </a>
+    
     　　　@foreach ($reviews as $review)
     <div class="m-4 p-4 border border-primary">
         <p>{{ $review->title }}</p>
@@ -55,6 +60,11 @@
         <p>{{ $review->spot_id}}</p>
         <p>{{ $review->user_id }}</p>
         <p>{{ $review->created_at}}</p>
+        <form action="{{ route('review.destroy', ['id' => $review->id]) }}" method="POST" class="d-inline">
+            @csrf
+            @method('delete')
+            <button class="btn btn-danger">削除</button>
+        </form>
     </div>
 @endforeach　　
             

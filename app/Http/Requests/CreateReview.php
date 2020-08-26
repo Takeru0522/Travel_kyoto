@@ -25,8 +25,10 @@ class CreateReview extends FormRequest
     {
         return [
             'title' => 'required|max:30', 
-            'body' => 'required',
+            'content' => 'required',
             'img' => 'required|max:255',
+            'star' => 'required|integer|min:1|max:5',
+            
         ];
     }
 }
