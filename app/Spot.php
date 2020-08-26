@@ -16,4 +16,7 @@ class Spot extends Model
         $spots = $stmt->fetchAll();
         return $spots;
     }
+    protected $fillable = [
+        'name', 'content', 'location', 'picture_path','iframe_code'
+    ];
 }
