@@ -23,7 +23,7 @@
                      @endforeach
                    </ul>
                 @endif
-                <form action="{{ route('spots.update',['id' => $spot->id]) }}" method="POST"　enctype="multipart/form-data">
+                <form action="{{ route('spots.update',['id' => $spot->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="form-group">
@@ -38,9 +38,10 @@
 
                     <div class="form-group">
                         <label for="picture_path">写真</label>
-                            <input id="picture_path" type="file" name="picture_path"
-                              class="form-control" value="{{ old('picture_path') }}"/>
+                        <input id="picture_path" type="file" name="picture_path"
+                        class="form-control" value="{{ old('picture_path') }}"/>
                     </div>
+
                     {{-- <div class="form-group ">
                         <label for="picture_path">写真</label>
 
@@ -65,7 +66,7 @@
 
                     <div class="form-group">
                         <label for="iframe_code">共有コード</label>
-                        <textarea class="form-control" name="iframe_code" id="iframe_code">{{ old('iframe_code',$spot->iflame_code) }}</textarea>
+                        <textarea class="form-control" name="iframe_code" id="iframe_code">{{ old('iframe_code',$spot->iframe_code) }}</textarea>
                     </div>
 
 
@@ -77,6 +78,7 @@
             </div>
         </div>
     </section>
+
 
 </body>
 </html>
