@@ -26,10 +26,10 @@
                         <textarea class="form-control" name="content" id="content">{{ old('content') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="picture">写真</label>
-                            <input id="picture" type="file" name="picture"
-                              class="form-control" value="{{ old('picture') }}"/>
-                    </div>        
+                        <label for="picture_path">写真</label>
+                            <input id="picture_path" type="file" name="picture_path"
+                              class="form-control" value="{{ old('picture_path') }}"/>
+                    </div>
                     <div class="form-group">
                         <label for="location">所在地</label>
                         <textarea class="form-control" name="location" id="location">{{ old('location') }}</textarea>
@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label for="iframe_code">共有コード</label>
                         <textarea class="form-control" name="iframe_code" id="iframe_code">{{ old('iframe_code') }}</textarea>
-                    </div>    
+                    </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">作成</button>
                     </div>
