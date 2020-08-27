@@ -22,6 +22,7 @@
                          <li class="alert alert-danger">{{ $message }}</li>
                      @endforeach
                    </ul>
+
                 @endif
                 <form action="{{ route('spots.update',['id' => $spot->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
