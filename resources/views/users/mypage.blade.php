@@ -24,11 +24,12 @@
         居住地→{{$profile->prefecture}} --}}
     <a class="btn btn-success" href="{{ route('users.edit', ['id' => $users->id]) }}">編集</a>
  
-    <pre>
-        {{-- <h1>{{ $msg }}</h1> --}}
- 
-    <table border="1">
+
+{{-- <h1>{{ $msg }}</h1>  --}}
+
+ <table border="1">
     <tr>
+
         <th>⭐️行きたいリスト</th>
         <th>⭐️行ったリスト</th>
     </tr>
@@ -38,10 +39,11 @@
     </tr>
     {{-- @foreach ($books as $book)
     <tr>
-        <td>{{ $book->title }}</td>
-        <td>{{ $book->author }}</td>
-    </tr>
-    @endforeach --}}
+         <td>{{ $want->user_id }}</td> 
+         <td>{{ $want->spot_id }}</td> --}}
+        
+    {{-- </tr>  --}}
+     {{-- @endforeach    --}}
 </table>
 </body>
-</html>
+</html> 
