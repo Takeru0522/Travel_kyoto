@@ -10,7 +10,7 @@
     <div class="bigbox">
         <div class="bigbox_left">
             <p class="imgsize"></p>
-            <img src="{{asset("storage/app/public/images/profilePicture/kiyomizu.jpg")}}" alt="spot_pictute" title="清水寺">
+            <img height="330px" src="{{ asset($spot->picture_path) }}" >
             <p class="content">{{ $spot->content}}</p>
         </div>
         <div class="bigbox_center">
@@ -23,14 +23,14 @@
             <div class="rightbox">
                 <div class="rightbigbox">
                     <div class="rightbox_left">
-                        <p> 住所 </p>
-                        <p> 電話番号 </p>
-                        <p> 交通アクセス </p>
+                        <p>所在地:{{$spot->location}}  </p>
+                        <p> {{$spot->tel}}電話番号 </p>
+                        <p> {{$spot->access}}交通アクセス </p>
                     </div>
                        
                 </div>
                      <div class="underbox">
-                         <div class="goodbottom"> <P>いいね</P></div>
+                         <div class="goodbottom"> <P>投稿ありがとう{{$spot->spots_thanks}}</P></div>
                          <div class="review"><P>クチコミ投稿</P></div>
                      </div>
             </div>
@@ -38,7 +38,7 @@
     </div>
     <div class="reviewbox">
         <p>{{$spot->name}}のクチコミ</p>
-        
+        <p class="star">五段階評価{{$spot->star}}</p> 
         
         
         
@@ -46,7 +46,7 @@
         　  <div class="username">
            <p>ユーザー名表示</p>
         <p class="reviewtext">観光地のクチコミ内容がここに入ります</p></div>
-        <p class="star">五段階評価</p>  
+        
         <p class="reviewimg">投稿画像</p>
     　</div>
             

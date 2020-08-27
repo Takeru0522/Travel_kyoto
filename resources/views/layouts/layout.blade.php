@@ -20,11 +20,13 @@
         justify-content: space-between;
 }
         .bigbox_left{
-            width: 30%;
-            padding: 10px;
+            width: 45%;
+            
+         
         }
         .content{
-            width: 30%;
+            width: 100%;
+
         }
         
         .bigbox_center{
@@ -53,6 +55,7 @@
             flex-direction: column
         justify-content: space-between;
         margin-bottom: 10px;
+
     }
         
         .rightbox{
@@ -60,7 +63,7 @@
         padding: 20px;
     }
         .rightbox_left{
-            width: 40%;
+            width: 100%;
         }
         .spotname{
             font-size: 50px;
@@ -91,7 +94,7 @@
         .username{
             
             
-            width:60%;
+            width:200px;
         }
         .review{
             background-color: crimson;
@@ -115,13 +118,11 @@
             
         }
         .star{
-            width: 10%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 150px;
+            
         }
         .reviewtext{
-            
+            width:480px;
           
             
         }
