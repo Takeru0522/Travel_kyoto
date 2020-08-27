@@ -20,7 +20,10 @@
         justify-content: space-between;
 }
         .bigbox_left{
+            align-content: stretch;
             width: 45%;
+            flex-direction: column;
+            justify-content: space-around;
             
          
         }
@@ -50,6 +53,7 @@
         }
         .bigbox_right{
             width: 45%;
+            margin-top: 30px;
         }
         .rightbigbox{
             flex-direction: column
@@ -59,18 +63,21 @@
     }
         
         .rightbox{
-        border:solid 1px ;
+        border:solid 3px ;
         padding: 20px;
     }
         .rightbox_left{
             width: 100%;
         }
         .spotname{
-            font-size: 50px;
+            font-size: 130px;
+            margin-top: 0;
+            margin-bottom: 0;
+
         }
         .imgsize{
             width:200px;
-            height:100px;
+            
             padding: 50px 0;
         }
         
@@ -128,9 +135,12 @@
         }
         .reviewimg{
             width:30%;
-            
+            border:solid 1px ;
             margin: 0px;
             padding: 20px;
+        }
+        .review_likes{
+
         }
         
     </style>
