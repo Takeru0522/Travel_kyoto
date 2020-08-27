@@ -50,7 +50,7 @@ public function store(CreateReview $request)
       $review->spot_id =1;
     
     
-    $review->save(); //DBに保存
+    $review->save(); 
 
     // return redirect()->route('spots.show',['id' => 1]); //一覧ページにリダイレクト
     return redirect()->route('spot.index'); //一覧ページにリダイレクト
