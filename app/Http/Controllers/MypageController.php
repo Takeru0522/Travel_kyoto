@@ -5,38 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
-use App\SpotWantTo;
-use App\SpotVisited;
 
-use Illuminate\Support\Facades\DB;
+ use App\SpotWantTo;
+ use App\SpotVisited;
+
 use App\Http\Requests\CreateMypage; 
 use Auth;
 
 class MypageController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
+   
+   
     public function mypage($id)
     {
         // $profile = new User();
+         $visit = SpotVisited::find($id);
+         $want = SpotWantTo::find($id);
+        // $user=Auth::user();
         $user = User::find($id);
-        $visit = DB::table('spot_visited')->where('user_id', $id)->value('spot_id');
-        $want = DB::table('spot_want_to')->where('user_id', $id)->value('spot_id');
-
-        $visit_spot = DB::table('spots')->where('id', $visit)->value('name');
-        $want_spot = DB::table('spots')->where('id', $want)->value('name');
+        // dd($user);
 
         //  return view('users.mypage');
-        return view('users.mypage')->with([
-            'users' => $user,
-            'visit_spots' => $visit_spot,
-            'want_spots' => $want_spot,
+        return view('users.mypage', [
+            'user' => $user,  'want' => $want,
         ]);
-        // $profile = Auth::user()->find(1);
-        // return view('mypage.mypage', ['profile' => $profile, 'id' => $id]);
+       
+        // return view('users.mypage', [
+        //     'user' => $user,  'visit' => $visit, 'want' => $want,
+        // ]);
     }
     public function edit(int $id)
     {
@@ -59,15 +55,6 @@ class MypageController extends Controller
 
         return redirect()->route('users.mypage', ['user' => $user]); //一覧ページにリダイレクト
         // return view('users.mypage');
-    }
-    public function index()
-    {
-        // $books = Book::all();
-        // $data = ['msg' => '本一覧', 'books' => $books];
-
-        // return view('users.mypage', $data);
-        // $diaries = Diary::orderBy('id', 'desc')->get();
-        return view('users.mypage');
     }
 
 

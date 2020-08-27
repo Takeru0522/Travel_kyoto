@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>編集画面</title>
 </head>
 <body>
@@ -23,17 +24,17 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                        <label for="title">名前</label>
-                        <input type="text" class="form-control" name="name" id="title" value="{{ old('name', $user->name) }}">
+                        <label for="name">名前</label>
+                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name', $user->name) }}">
                     </div>
                     <div class="form-group">
-                        <label for="title">メールアドレス</label>
-                        <textarea class="form-control" name="email" id="text">{{ old('email', $user->email) }}</textarea>
+                        <label for="email">メールアドレス</label>
+                        <textarea class="form-control" name="email" id="eamil">{{ old('email', $user->email) }}</textarea>
                     </div>
                     <!--
                     <div class="form-group">
                         <label for="title">パスワード</label>
-                        <textarea class="form-control" name="password" id="text">{{ old('password', $user->password) }}</textarea>
+                        {{-- <textarea class="form-control" name="password" id="text">{{ old('password', $user->password) }}</textarea> --}}
                     </div>
                     -->
                     <div class="text-right">

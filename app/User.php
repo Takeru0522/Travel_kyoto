@@ -28,10 +28,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function spots(){
-        return $this->hasMany('App\Spot');
+    public function spots()
+    {
+    return $this->hasMany('App\Spot');
     }
-    public function reviews(){
-        return $this->hasMany('App\Review');
+    public function reviews()
+    {
+    return $this->hasMany('App\Review');
     }
 }

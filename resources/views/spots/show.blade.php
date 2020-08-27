@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('title')
    
@@ -19,7 +19,8 @@
         <div class="bigbox_right">
             <p class="spotname">{{$spot->name}}</p>
             <p class="spot_want_to">行きたい</p>
-            <p class="spot_visited">行ってよかった</p>
+            <p class="spot_visited">行ってよかった</p>         
+
             <div class="rightbox">
                 <div class="rightbigbox">
                     <div class="rightbox_left">
@@ -49,8 +50,34 @@
         <p class="star">五段階評価</p>  
         <p class="reviewimg">投稿画像</p>
     　</div>
-            
-        　　　　　
+    <a href="{{ route('spot.create') }}" class="btn btn-primary btn-block">
+        新規投稿
+    </a>
+    
+    　　　@foreach ($reviews as $review)
+    <div class="m-4 p-4 border border-primary">
+        <p>{{ $review->title }}</p>
+        <p>{{ $review->content }}</p>
+        <p>{{ $review->star}}</p>
+        <p>{{ $review->img }}</p>
+        <p>{{ $review->spot_id}}</p>
+        <p>{{ $review->user_id }}</p>
+        <p>{{ $review->created_at}}</p>
+        {{-- @if (Auth::check() && Auth::user()->id === $review->user_id) --}}
+        <a class="btn btn-success" href="{{ route('review.edit', ['id' => $review->id]) }}">編集</a>
+        <form action="{{ route('review.destroy', ['id' => $review->id]) }}" method="POST" class="d-inline">
+            @csrf
+            @method('delete')
+            <button class="btn btn-danger">削除</button>
+        </form>
+        {{-- @endif  --}}
+    </div>
+    <div class=" mt-3 ml-3">
+        <i class="far fa-heart fa-lg text-danger js-like"></i>
+        <input class="review-id" type="hidden" value="{{ $review->id }}">
+        <span class="js-like-num">200</span>
+    </div>
+@endforeach　　
             
                 
     </div>
