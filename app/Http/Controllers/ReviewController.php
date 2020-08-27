@@ -74,7 +74,7 @@ public function destroy(int $id)
     //Diaryモデルを使用して、diariesテーブルから$idと一致するidをもつデータを取得
     $review= Review::find($id); 
 
-    //取得したデータを削除
+    
     $review->delete();
 
     return redirect()->route('spot.index');
