@@ -5,6 +5,9 @@
 @endsection
 @section('content')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<a href="{{ route('review.create') }}" class="btn btn-primary btn-block">
+    口コミ新規投稿
+</a>
 <div class="allback">
     <div class="container"> 
     <div class="bigbox">
@@ -28,28 +31,32 @@
                         <p> 電話番号 </p>
                         <p> 交通アクセス </p>
                     </div>
-                       
+                    <div class="rightmap">
+                        <p> MAP </p>
+                    </div>                       
                 </div>
-                     <div class="underbox">
-                         <div class="goodbottom"> <P>いいね</P></div>
-                         <div class="review"><P>クチコミ投稿</P></div>
-                     </div>
+                <div class="underbox">
+                    <div class="goodbottom"> <P>いいね</P></div>
+                    <div class="review"><P>クチコミ投稿</P></div>
+                </div>
             </div>
         </div> 
     </div>
     <div class="reviewbox">
         <p>{{$spot->name}}のクチコミ</p>
-        
-        
-        
-        
-    　 <div class="totalreview">
+        <p>観光地のクチコミ</p>
+        <p>星星星星星</p>
+        <div class="reviewspotname">
+            <p>スポット名表示</p>
+        </div>
+        <div class="totalreview">
         　  <div class="username">
-           <p>ユーザー名表示</p>
-        <p class="reviewtext">観光地のクチコミ内容がここに入ります</p></div>
-        <p class="star">五段階評価</p>  
-        <p class="reviewimg">投稿画像</p>
-    　</div>
+                <p>ユーザー名表示</p>
+                <p class="reviewtext">観光地のクチコミ内容がここに入ります</p>
+            </div>
+            <p class="star">五段階評価</p>  
+            <p class="reviewimg">投稿画像</p>
+        </div>
     <a href="{{ route('spot.create') }}" class="btn btn-primary btn-block">
         新規投稿
     </a>
