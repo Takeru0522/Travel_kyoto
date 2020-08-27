@@ -26,5 +26,9 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/spots/{id}', 'SpotController@show')->name('spots.show');
 Auth::routes();
 
+Route::get('user/{id}', 'MypageController@mypage')->name('users.mypage');
+Route::get('user/{id}/edit', 'MypageController@edit')->name('users.edit'); // 編集画面
+Route::put('user/{id}/update', 'MypageController@update')->name('users.update');
+
 
 
