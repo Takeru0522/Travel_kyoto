@@ -10,7 +10,9 @@
 @section('content')
 <div class="container">
     <nav class="navbar navbar-light bg-light">
-            <form class="form-inline" action="{{ route('spot.search') }}" method="POST">
+            <form class="form-inline" action="{{ url('/search') }}" method="POST">
+              {{ csrf_field()}}
+              {{method_field('get')}}
           <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
@@ -32,7 +34,7 @@
           <p class="card-text">{{ $spot->content }}</p>
           <p class="card-text">{{ $spot->location }}</p>
           <p class="card-text">{{ $spot->iframe_code }}</p>
-          <a href="#" class="btn btn-primary">詳細</a>
+          <a href="{{ route('spots.show',['id' => $spot->id]) }}" class="btn btn-primary">詳細</a>
         </div>
       </div>
       @endforeach
