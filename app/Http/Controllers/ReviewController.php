@@ -26,38 +26,56 @@ class ReviewController extends Controller
 
 public function store(CreateReview $request)
 {
-    $review = new Review(); //Diaryモデルをインスタンス化
+    $review = new Review(); 
 
     $review->title = $request->title; //画面で入力されたタイトルを代入
     $review->content = $request->content; //画面で入力されたタイトルを代入
-    // $review->content = $request->content;
     
     
-    $review->star = $request->star; 
-    // $review->stars = $request->stars; 
-    // $review->stars = intval($request); 
+    $imgPath = $this->saveReviewImage($request['picture_path']);
+    $review->picture_path = $imgPath;
+    // dd($imgPath);
+  
    
-    // $review->intval($request) = $request->stars;
-    
-    // $review->star = $request->intval($star);
-    //  $review->spot_id = $request->spot_id;
-   // $review->user_id = $request->user_id;
+    $num = $request->star;
+    $float=floatval($num);
+    // dd(gettype($float));
+
+    $review->star =$float;
+
+   
      $review->user_id = Auth::user()->id;
-      $review->spot_id = $request->spot_id;
-    $review->img = $request->img;
-    // $review->picture_path = $imgPath; //画面で入力された本文を代入
+    //   $review->spot_id = $request->spot_id;
+     
+      $review->spot_id =1;
+    
+    
     $review->save(); //DBに保存
 
-    return redirect()->route('spots.show'); //一覧ページにリダイレクト
+    // return redirect()->route('spots.show',['id' => 1]); //一覧ページにリダイレクト
+    return redirect()->route('spot.index'); //一覧ページにリダイレクト
 }
+private function saveReviewImage($image)
+    {
+        // デフォルトではstorage/appに画像が保存されます。
+        // 第2引数にpublicをつけることで、storage/app/publicに保存されます。
+        // 今回は、/images/profilePictureをつけて、
+        // storage/app/public/images/profilePictureに画像が保存されるようにしています。
+        // 自分で指定しない場合、ファイル名は自動で設定されます。
 
+        //  dd($image, 'come on');
+        $imgPath = $image->store('images/reviewPicture', 'public');
+
+        return 'storage/' . $imgPath;
+
+    }
 public function destroy(int $id)
 {
     //Diaryモデルを使用して、diariesテーブルから$idと一致するidをもつデータを取得
     $review= Review::find($id); 
 
     //取得したデータを削除
-    $review->delete($id);
+    $review->delete();
 
     return redirect()->route('spots.show');
 }
@@ -92,4 +110,5 @@ public function like(int $id)
 
     $review->likes()->attach(Auth::user()->id);
 }
+
 }

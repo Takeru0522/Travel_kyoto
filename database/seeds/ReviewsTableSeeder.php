@@ -40,7 +40,7 @@ class ReviewsTableSeeder extends Seeder
                 'title' => $review['title'],
                 'content' => $review['content'],
                 'star'   => $review['star'],
-                'img' => 'img/test.jpg',
+                'picture_path' => 'storage/images/profilePicture/default.jpg',
                 'spot_id' => $review['spot_id'],
                 // 'user_id' => $review['user_id'],
                 'user_id' => 1,

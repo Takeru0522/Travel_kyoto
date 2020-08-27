@@ -20,7 +20,7 @@
        @endforeach
    </ul>
 @endif
-                <form action="{{ route('review.create') }}" method="POST">
+                <form action="{{ route('review.create') }}"enctype="multipart/form-data"method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="title">タイトル</label>
@@ -33,29 +33,30 @@
                     <div class="form-group">
                         
                         <label for="star">星</label>
-                        <input type="number" step="0.1" class="form-control" name="title" id="title" value="{{ old('title') }}"/>   
+                        {{-- <input type="text"  class="form-control" name="title" id="title" value="{{ old('title') }}"/>    --}}
                         
-                           <select name="blood">
-                           <option value="0">0</option>
-                           <option value="0.5">0.5</option>
-                           <option value="1">1⭐</option>
-                           <option value="1.5">1.5⭐</option>
-                           <option value="2">2⭐⭐</option>
-                           <option value="2.5">2.5⭐⭐</option>
-                           <option value="3">3⭐⭐⭐</option>
-                           <option value="3.5">3.5⭐⭐⭐</option>
-                           <option value="4">4⭐⭐⭐⭐</option>
-                           <option value="4.5">4.5⭐⭐⭐⭐</option>
-                           <option value="5">5⭐⭐⭐⭐⭐</option> 
+                           <select name="star">
+                           <option  class="form-control" name="star" value="0">0</option>
+                           <option  class="form-control" name="star"value="0.5">0.5</option>
+                           <option  class="form-control" name="star"value="1">1⭐</option>
+                           <option  class="form-control" name="star"value="1.5">1.5⭐</option>
+                           <option  class="form-control" name="star"value="2">2⭐⭐</option>
+                           <option  class="form-control" name="star"value="2.5">2.5⭐⭐</option>
+                           <option  class="form-control" name="star"value="3">3⭐⭐⭐</option>
+                           <option  class="form-control" name="star"value="3.5">3.5⭐⭐⭐</option>
+                           <option  class="form-control" name="star"value="4">4⭐⭐⭐⭐</option>
+                           <option  class="form-control" name="star"value="4.5">4.5⭐⭐⭐⭐</option>
+                           <option  class="form-control" name="star"value="5">5⭐⭐⭐⭐⭐</option> 
                            </div>  
                     {{-- <input type="number" class="form-control" name="star" id="star" value="{{ old('star') }}"/> 
                     <p>星 ：<br> --}}
 
                     </select></p>
+                   
                     <div class="form-group">
-                        <label for="picture">写真</label>
-                            <input id="picture" type="file" name="picture"
-                              class="form-control" value="{{ old('picture') }}"/>
+                        <label for="picture_path">写真</label>
+                            <input id="picture_path" type="file" name="picture_path"
+                              class="form-control" value="{{ old('picture_path') }}"/>
                     </div>  
 
 
