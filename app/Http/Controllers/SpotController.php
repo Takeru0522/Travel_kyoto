@@ -53,12 +53,12 @@ public function edit(int $id){
 
     }
     public function update(int $id, CreateSpot $request)
-    {
-    // dd($request['picture_path'], 'req');
+{
     $spot = Spot::find($id);
 
     $imgPath = $this->saveSpotImage($request['picture_path']);
-    // dd($imgPath, 'aa');
+
+
     $spot->name = $request->name;
     $spot->content = $request->content;
     $spot->picture_path = $imgPath;
