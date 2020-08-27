@@ -74,20 +74,21 @@ public function destroy(int $id)
     //Diaryモデルを使用して、diariesテーブルから$idと一致するidをもつデータを取得
     $review= Review::find($id); 
 
-    //取得したデータを削除
+    
     $review->delete();
 
-    return redirect()->route('spots.show');
+    return redirect()->route('spot.index');
 }
 
 public function edit(int $id)
 {
      //Diaryモデルを使用して、diariesテーブルから$idと一致するidをもつデータを取得
     $review = Review::find($id); 
-
-    return view('reviews.reviewedit', [
+    //  dd($review);
+     return view('reviews.reviewedit', [
         'review' => $review,
-    ]);
+     ]);
+    
 }
 public function update(int $id, CreateReview $request)
 {
@@ -95,13 +96,17 @@ public function update(int $id, CreateReview $request)
 
     $review->title = $request->title; //画面で入力されたタイトルを代入
     $review->content = $request->content; //画面で入力された本文を代入
-    $review->star = $request->star; //画面で入力された本文を代入
-    $review->spot_id = $request->spot_id; //画面で入力された本文を代入
-    $review->user_id = $request->user_id; //画面で入力された本文を代入
-    $review->img = $request->img; //画面で入力された本文を代入
+    
+    $num = $request->star;
+    $float=floatval($num); //画面で入力された本文を代入
+    $review->spot_id = 1; //画面で入力された本文を代入
+    $review->user_id = Auth::user()->id;
+     //画面で入力された本文を代入
+    $imgPath = $this->saveReviewImage($request['picture_path']);
+    $review->picture_path = $imgPath;//画面で入力された本文を代入
     $review->save(); //DBに保存
 
-    return redirect()->route('spots.show'); 
+    return redirect()->route('spot.index'); 
 }
 
 public function like(int $id)
