@@ -14,15 +14,15 @@
         <div class="bigbox_left">
             <p class="imgsize"></p>
             <img src="{{asset("storage/app/public/images/profilePicture/kiyomizu.jpg")}}" alt="spot_pictute" title="清水寺">
-            <p class="content">{{ $spot->content}}</p>
+            {{-- <p class="content">{{ $spot->content}}</p> --}}
         </div>
         <div class="bigbox_center">
             
         </div>
         <div class="bigbox_right">
-            <p class="spotname">{{$spot->name}}</p>
-            <p class="spot_want_to">行きたい</p>
-            <p class="spot_visited">行ってよかった</p>         
+            {{-- <p class="spotname">{{$spot->name}}</p> --}}
+            {{-- <p class="spot_want_to">行きたい</p>
+            <p class="spot_visited">行ってよかった</p>          --}}
 
             <div class="rightbox">
                 <div class="rightbigbox">
@@ -43,7 +43,7 @@
         </div> 
     </div>
     <div class="reviewbox">
-        <p>{{$spot->name}}のクチコミ</p>
+        {{-- <p>{{$spot->name}}のクチコミ</p> --}}
         <p>観光地のクチコミ</p>
         <p>星星星星星</p>
         <div class="reviewspotname">

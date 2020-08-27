@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>編集画面</title>
 </head>
@@ -23,6 +24,7 @@
                 <form action="{{ route('users.update', ['id' => $user->id]) }}" method="post">
                     @csrf
                     @method('put')
+                  <main>  
                     <div class="form-group">
                         <label for="name">名前</label>
                         <input type="text" class="form-control" name="name" id="name" value="{{ old('name', $user->name) }}">
@@ -38,7 +40,7 @@
                     </div>
                     -->
                     <div class="text-right">
-                        <button type="submit" class="btn btn-primary">更新</button>
+                        <button type="submit" class="btn-square">更新</button></main>
                     </div>
                 </form>
             </div>
