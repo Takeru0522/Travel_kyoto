@@ -18,7 +18,7 @@
         .bigbox{
         display:flex;
         justify-content: space-between;
-}
+        }
         .bigbox_left{
             align-content: stretch;
             width: 45%;
