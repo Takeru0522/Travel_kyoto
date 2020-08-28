@@ -31,14 +31,30 @@
                     </div>
                     <div class="form-group">
                         <label for="email">メールアドレス</label>
-                        <textarea class="form-control" name="email" id="eamil">{{ old('email', $user->email) }}</textarea>
+                        <input class="form-control" name="email" id="eamil" value="{{ old('email', $user->email) }}">
                     </div>
-                    <!--
+                    
+                    <div class="form-group row">
+                        <label for="picture" class="col-md-4 col-form-label text-md-right">Profile picutre</label>
+
+                        <div class="col-md-6">
+                            <input id="picture" type="file" name="picture"
+                              class="form-control{{ $errors->has('picture') ? ' is-invalid' : '' }}"
+                            >
+
+                            @if ($errors->has('picture'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('picture') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="title">パスワード</label>
-                        {{-- <textarea class="form-control" name="password" id="text">{{ old('password', $user->password) }}</textarea> --}}
+                        <input class="form-control" name="password" id="text" >
                     </div>
-                    -->
+                    
                     <div class="text-right">
                         <button type="submit" class="btn-square">更新</button></main>
                     </div>

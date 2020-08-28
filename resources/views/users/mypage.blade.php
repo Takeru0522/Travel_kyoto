@@ -65,7 +65,8 @@
     <div class="profile-card__inner">
     <div class="profile-thumb">
         {{-- <li class="nav-item"> --}}
-            <img height="40px" src="{{asset(Auth::user()->$picture_path)}}" >
+            <img height="40px" src="{{ asset(Auth::user()->picture_path) }}" >
+            {{-- <img height="40px" src="{{ asset(Auth::user()->picture_path)}}" >  --}}
             {{-- <img height="40px" src="{{$picture_path}}" > --}}
            
         {{-- </li> --}}
