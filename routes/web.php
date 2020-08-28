@@ -12,6 +12,9 @@
 */
 
 
+//Route::post('/', 'SpotController@search')->name('spot.search');
+Route::get('/', 'SpotController@search')->name('spot.search');
+
 
 
 
