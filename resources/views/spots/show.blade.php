@@ -33,10 +33,7 @@
                     </div>
                     
                 </div>
-                <div class="underbox">
-                    <div class="goodbottom"> <P>いいね</P></div>
-                    <div class="review"><P>クチコミ投稿</P></div>
-                </div>
+               
                      <div class="underbox">
                          <div class="goodbottom"> <P>投稿ありがとう{{$spot->spots_thanks}}</P></div>
                          <div class="review"><P>クチコミ投稿</P></div>
@@ -47,17 +44,15 @@
     <div class="reviewbox">
         <p>{{$spot->name}}のクチコミ</p>
 
-        <p>観光地のクチコミ</p>
+        
         <p class="star">⭐️⭐️⭐️⭐️🌗{{$spot->star}}</p>
-        <div class="reviewspotname">
-            <p>スポット名表示</p>
-        </div>
+        
         <div class="totalreview">
         　  <div class="username">
                 <p>ユーザー名表示</p>
                 <p class="reviewtext">観光地のクチコミ内容がここに入ります</p>
             </div>
-            <p class="star">五段階評価</p>  
+            
             <p class="reviewimg">投稿画像</p>
         </div>
     <a href="{{ route('spot.create') }}" class="btn btn-primary btn-block">
