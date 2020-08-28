@@ -20,11 +20,16 @@
         justify-content: space-between;
 }
         .bigbox_left{
-            width: 30%;
-            padding: 10px;
+            align-content: stretch;
+            width: 45%;
+            flex-direction: column;
+            justify-content: space-around;
+            
+         
         }
         .content{
-            width: 30%;
+            width: 100%;
+
         }
         
         .bigbox_center{
@@ -48,26 +53,31 @@
         }
         .bigbox_right{
             width: 45%;
+            margin-top: 30px;
         }
         .rightbigbox{
             flex-direction: column
         justify-content: space-between;
         margin-bottom: 10px;
+
     }
         
         .rightbox{
-        border:solid 1px ;
+        border:solid 3px ;
         padding: 20px;
     }
         .rightbox_left{
-            width: 40%;
+            width: 100%;
         }
         .spotname{
-            font-size: 50px;
+            font-size: 130px;
+            margin-top: 0;
+            margin-bottom: 0;
+
         }
         .imgsize{
             width:200px;
-            height:100px;
+            
             padding: 50px 0;
         }
         
@@ -91,7 +101,7 @@
         .username{
             
             
-            width:60%;
+            width:200px;
         }
         .review{
             background-color: crimson;
@@ -115,21 +125,22 @@
             
         }
         .star{
-            width: 10%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 150px;
+            
         }
         .reviewtext{
-            
+            width:480px;
           
             
         }
         .reviewimg{
             width:30%;
-            
+            border:solid 1px ;
             margin: 0px;
             padding: 20px;
+        }
+        .review_likes{
+
         }
         
     </style>

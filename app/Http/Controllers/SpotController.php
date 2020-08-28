@@ -82,9 +82,8 @@ public function edit(int $id){
         $imgPath = $image->store('images/spotPicture', 'public');
 
         return 'storage/' . $imgPath;
-
     }
-}
+}    
 
 
 
