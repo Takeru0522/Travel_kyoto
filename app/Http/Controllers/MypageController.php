@@ -59,11 +59,28 @@ class MypageController extends Controller
         // $user->img= 'img'; //画面で入力された本文を代入
         // $user->password= $request->password; 
         // dd($user);//画面で入力された本文を代入
+        $imgPath = $this->saveUserImage($request['picture_path']);
+        $user->picture_path = $imgPath;
+        //  dd($imgPath);
+  
         $user->save(); //DBに保存
 
         return redirect()->route('users.mypage', ['user' => $user]); //一覧ページにリダイレクト
         // return view('users.mypage');
     }
+    private function saveUserImage($image)
+    {
+        // デフォルトではstorage/appに画像が保存されます。
+        // 第2引数にpublicをつけることで、storage/app/publicに保存されます。
+        // 今回は、/images/profilePictureをつけて、
+        // storage/app/public/images/profilePictureに画像が保存されるようにしています。
+        // 自分で指定しない場合、ファイル名は自動で設定されます。
 
+        // dd($image, 'come on');
+        $imgPath = $image->store('images/userPicture', 'public');
+
+        return 'storage/' . $imgPath;
+
+    }
 
 }

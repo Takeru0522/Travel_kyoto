@@ -35,16 +35,17 @@
                     </div>
                     
                     <div class="form-group row">
-                        <label for="picture" class="col-md-4 col-form-label text-md-right">Profile picutre</label>
+                        <label for="picture_path" class="col-md-4 col-form-label text-md-right">プロフィール画像</label>
 
                         <div class="col-md-6">
-                            <input id="picture" type="file" name="picture"
-                              class="form-control{{ $errors->has('picture') ? ' is-invalid' : '' }}"
+                            
+                            <input id="picture_path" type="file" name="picture_path"
+                              class="form-control{{ $errors->has('picture_path') ? ' is-invalid' : '' }}"
                             >
 
-                            @if ($errors->has('picture'))
+                            @if ($errors->has('picture_path'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('picture') }}</strong>
+                                    <strong>{{ $errors->first('picture_path') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -63,5 +64,7 @@
         </div>
     </section>
 </body>
-</html>
+</html>  
+
+
 
