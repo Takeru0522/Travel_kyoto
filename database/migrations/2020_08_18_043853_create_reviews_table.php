@@ -18,7 +18,7 @@ class CreateReviewsTable extends Migration
             $table->string('title', 60);
             $table->text('content');
             $table->decimal('star');
-            $table->string('img', 255)->nullable();
+            
             $table->integer('spot_id')->unsigned();
             $table->foreign('spot_id')->references('id')->on('spots');
             $table->integer('user_id')->unsigned();
