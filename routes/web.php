@@ -12,7 +12,9 @@
 */
 
 
+
 //Route::post('/', 'SpotController@search')->name('spot.search');
+Route::get('/search', 'SpotController@search');
 Route::get('/', 'SpotController@search')->name('spot.search');
 
 
@@ -27,11 +29,7 @@ Route::get('/', 'SpotController@search')->name('spot.search');
 // Route::get('/user/{id}', 'MypageController@index');
 
 
- Auth::routes();
-
-
-
-
+Auth::routes();
 
 
 Route::get('/', 'SpotController@index')->name('spot.index');
@@ -67,7 +65,3 @@ Route::group(['middleware' => 'auth'], function() {
 
 
 });
-      
-
-      
-
