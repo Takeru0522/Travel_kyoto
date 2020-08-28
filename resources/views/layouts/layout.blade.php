@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{{secure_asset('/assets/css/style.css')}} ">
 
     <style>
+        .allback{
+            background-color: blanchedalmond;
+        }
         .container{
             width: 1080px;
             margin:0 auto;
@@ -19,13 +22,35 @@
         .bigbox_left{
             width: 30%;
             padding: 10px;
+        }
+        .content{
+            width: 30%;
+        }
+        
+        .bigbox_center{
             
+        }
+        .spot_want_to{
+            background-color: crimson;
+            font-size: 12px;
+            padding: 3px;
+            color: aliceblue;
+            text-align: center;
+            width: 30%;
+        }
+        .spot_visited{
+            background-color:blue;
+            font-size: 12px;
+            padding: 3px;
+            color: aliceblue;
+            text-align: center;
+            width: 30%;
         }
         .bigbox_right{
             width: 45%;
         }
         .rightbigbox{
-        display:flex;  
+            flex-direction: column
         justify-content: space-between;
         margin-bottom: 10px;
     }
@@ -41,23 +66,22 @@
             font-size: 50px;
         }
         .imgsize{
-            border:solid 2px ;
-            padding: 100px;
+            width:200px;
+            height:100px;
+            padding: 50px 0;
         }
-        .rightmap{
-        border:solid 1px ;
-        margin: 0px;
-        padding: 20px; 
-        width: 40%;
-        }
+        
         .underbox{
             display:flex; 
             justify-content: space-between;
             }
         .reviewbox{
             border:solid 1px ;
-        margin: 0px;
-        padding: 20px;
+            margin: 0px;
+            padding: 20px;
+            background-color: azure;
+            width:500px;
+            
         }
         .reviewspotname{
             display:flex; 
@@ -65,24 +89,45 @@
             border:solid 1px ;
         }
         .username{
-            display:flex; 
-            justify-content: space-between;
-            border:solid 1px ;
+            
+            
+            width:60%;
+        }
+        .review{
+            background-color: crimson;
+            font-size: 12px;
+            padding: 3px;
+            color: aliceblue;
+            text-align: center;
+        }
+        .goodbottom{
+            background-color: crimson;
+            font-size: 12px;
+            padding: 3px;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .totalreview{
             display:flex; 
-            justify-content: space-between;
+            flex-direction: column
             
         }
+        .star{
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .reviewtext{
-            width: 50%;
-            border:solid 1px ;
-            padding: 20px;
-            height:200px
+            
+          
+            
         }
         .reviewimg{
             width:30%;
-            border:solid 1px ;
+            
             margin: 0px;
             padding: 20px;
         }

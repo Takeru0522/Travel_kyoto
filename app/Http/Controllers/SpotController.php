@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Spot;
+use App\Review;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateSpot;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class SpotController extends Controller
 {
-    public function index()
+public function index()
     {
         $spots = Spot::all();
 
@@ -43,7 +44,8 @@ class SpotController extends Controller
         $spot = Spot::findOrFail($id);
         return view('spots.show',['spot' => $spot]);
     }
-    public function edit(int $id){
+
+public function edit(int $id){
         $spot = Spot::find($id);
 
         // dd($spot);
@@ -51,12 +53,12 @@ class SpotController extends Controller
 
     }
     public function update(int $id, CreateSpot $request)
-    {
-    // dd($request['picture_path'], 'req');
+{
     $spot = Spot::find($id);
 
     $imgPath = $this->saveSpotImage($request['picture_path']);
-    // dd($imgPath, 'aa');
+
+
     $spot->name = $request->name;
     $spot->content = $request->content;
     $spot->picture_path = $imgPath;
