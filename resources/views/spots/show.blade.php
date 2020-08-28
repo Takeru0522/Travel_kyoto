@@ -31,17 +31,12 @@
                         <p>所在地:{{$spot->location}}  </p>
                         
                     </div>
-                    <div class="rightmap">
-                        <p> MAP </p>
-                    </div>
+                    
                 </div>
-                <div class="underbox">
-                    <div class="goodbottom"> <P>いいね</P></div>
-                    <div class="review"><P>クチコミ投稿</P></div>
-                </div>
+               
                      <div class="underbox">
                          <div class="goodbottom"> <P>投稿ありがとう{{$spot->spots_thanks}}</P></div>
-                         <div class="review"><P>クチコミ投稿</P></div>
+                         
                      </div>
             </div>
         </div> 
@@ -49,22 +44,18 @@
     <div class="reviewbox">
         <p>{{$spot->name}}のクチコミ</p>
 
-        <p>観光地のクチコミ</p>
-        <p class="star">⭐️⭐️⭐️⭐️🌗{{$spot->star}}</p>
-        <div class="reviewspotname">
-            <p>スポット名表示</p>
-        </div>
+        
+        <p class="star">⭐️⭐️⭐️⭐️{{$spot->star}}</p>
+        
         <div class="totalreview">
         　  <div class="username">
-                <p>ユーザー名表示</p>
-                <p class="reviewtext">観光地のクチコミ内容がここに入ります</p>
+                <p>ユーザー名:銀閣寺大ファン</p>
+                <p class="reviewtext">こんな綺麗な金色に輝く建物はみた事ありませんでした。一休さんが見たくなりました！</p>
             </div>
-            <p class="star">五段階評価</p>  
+            
             <p class="reviewimg">投稿画像</p>
         </div>
-    <a href="{{ route('spot.create') }}" class="btn btn-primary btn-block">
-        新規投稿
-    </a>
+    
     
     {{-- @foreach ($reviews as $review) --}}
 {{--     <div class="m-4 p-4 border border-primary">
@@ -95,8 +86,8 @@
 </div>
 {{-- <p>{{ $spot->location }}</p>
 <p>{{ $spot->created_at }}</p>
-<p>{{ $spot->updated_at }}</p>
- --}}
+<p>{{ $spot->updated_at }}</p> --}}
+
 
 </div>
 @endsection
