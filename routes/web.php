@@ -14,7 +14,7 @@
     
 Route::get('/', 'SpotController@index')->name('spot.index');
 
-Route::post('/', 'SpotController@search')->name('spot.search');
+Route::get('/search', 'SpotController@search');
 
 
 

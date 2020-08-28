@@ -47,29 +47,28 @@ class SpotController extends Controller
     }
     public function search(Request $request) {
         
-        dd($request);
-        
-        if(!empty($keyword_name) && empty($keyword_location) && empty($keyword_created_at)) {
-            $query = Spot::query();
-            $spots = $query->where('name','like', '%' .$keyword_name. '%')->get();
-            //return redirect()->route('spot.index');
-          }
-          if(empty($keyword_name) && !empty($keyword_location) && empty($keyword_created_at)) {
-            $query = Spot::query();
-            $spots = $query->where('location','like', '%' .$keyword_location. '%')->get();
-            //return redirect()->route('spot.index');
-          }
-        if(empty($keyword_name) && empty($keyword_location) && !empty($keyword_created_at)) {
-            $query = Spot::query();
-            $spots = $query->where('created_at','like', '%' .$keyword_created_at. '%')->get();
-            //return redirect()->route('spot.index');
-          }
-        else {
-            //return redirect()->route('spot.index');
-            }
+        $keyword = $request->input('keyword');
         
 
+        if(!empty($keyword)) {
+            $query = Spot::query();
+            $spots = $query->where('name','like', '%' .$keyword. '%')->get();
+            $message = "「". $keyword."」を含む観光地名の検索が完了しました。";
+            return view('/search')->with([
+                'spots' => $spots,
+                'message' => $message,
+              ]);
+            
+         }
+          
+
+        
+        
+            $message = "検索結果はありません。";
+            return view('/search')->with('message',$message);
+            
 
 
-    }    
+    }
+
 }
