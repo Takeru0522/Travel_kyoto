@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateSpot extends FormRequest
+class CreateMypage extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,19 @@ class CreateSpot extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:30',
-            'content' => 'required',
-            //'img' => 'required|max:255',
-            // 'picture_path' => 'required|max:2048',
+            'name' => 'required|max:30', 
+            'email' => 'required|max:60',
+            // 'password' => 'required|max:255',
+
         ];
     }
+
+    public function attributes()
+{
+    return [
+        'name' => '名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
+    ];
+}
 }

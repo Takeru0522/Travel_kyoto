@@ -1,14 +1,63 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+
+
+.star5_rating{
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: #CCCCCC; /* グレーカラー 自由に設定化 */
+    // font-size: 30px; フォントサイズ 自由に設定
+}
+.star5_rating:before, .star5_rating:after{
+    content: '★★★★★';
+}
+.star5_rating:after{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #FFCF32; /* イエローカラー 自由に設定化 */
+}
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+}
+
+body {
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Hiragino Kaku Gothic ProN,"メイリオ",meiryo,sans-serif;
+    font-weight: 400;
+}
+
+nav {
+  background-color: #55C501 !important;
+  #Navber {
+    .navbar-nav {
+      .nav-item {
+        // 投稿するボタンの背景を深緑にする
+        #post-link {
+          background-color: #367E00;
+          border-radius: 5px;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
 }
