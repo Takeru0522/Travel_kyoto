@@ -80,7 +80,7 @@
         <input class="review-id" type="hidden" value="{{ $review->id }}">
         <span class="js-like-num">200</span>
     </div> --}}
-{{-- @endforeach --}}
+@endforeach
 
     </div>
 </div>
