@@ -10,9 +10,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js" defer></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/review.js') }}" defer></script> 
+    <script src="{{ asset('js/review.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -208,7 +208,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                <a class="dropdown-item" href="{{route('users.mypage', auth()->user()->id)}}">My Page</a>
                                 </div>
+
                             </li>
                             <li class="nav-item">
                                 <img height="40px" src="{{ asset(Auth::user()->picture_path) }}" >
