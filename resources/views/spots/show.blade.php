@@ -31,9 +31,7 @@
                         <p>所在地:{{$spot->location}}  </p>
                         
                     </div>
-                    <div class="rightmap">
-                        <p> MAP </p>
-                    </div>
+                    
                 </div>
                 <div class="underbox">
                     <div class="goodbottom"> <P>いいね</P></div>
@@ -95,8 +93,8 @@
 </div>
 {{-- <p>{{ $spot->location }}</p>
 <p>{{ $spot->created_at }}</p>
-<p>{{ $spot->updated_at }}</p>
- --}}
+<p>{{ $spot->updated_at }}</p> --}}
+
 
 </div>
 @endsection
