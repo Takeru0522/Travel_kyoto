@@ -24,13 +24,16 @@ class MypageController extends Controller
         $want = DB::table('spot_want_to')->where('user_id', $id)->value('spot_id');
         // $user=Auth::user();
         $user = User::find($id);
+        $picture_path=Auth::user()->picture_path;
         // dd($user);
         $visit_spot = DB::table('spots')->where('id', $visit)->value('name');
         $want_spot = DB::table('spots')->where('id', $want)->value('name');
-
+    //    dd(Auth::user()->picture_path);
         //  return view('users.mypage');
         return view('users.mypage')->with([
             'users' => $user,
+             'picture_path' => $picture_path,
+
             'visit_spots' => $visit_spot,
             'want_spots' => $want_spot,
         ]);

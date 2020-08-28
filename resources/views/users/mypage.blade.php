@@ -64,7 +64,12 @@
 <div class="profile-card">
     <div class="profile-card__inner">
     <div class="profile-thumb">
-      <img src="https://obl-life.com/wordpress/wp-content/uploads/2019/06/obl_icon-red.jpg" alt="アイコン">
+        {{-- <li class="nav-item"> --}}
+            <img height="40px" src="{{asset(Auth::user()->$picture_path)}}" >
+            {{-- <img height="40px" src="{{$picture_path}}" > --}}
+           
+        {{-- </li> --}}
+      
     </div>
     <div class="profile-content">
           <span class="profile-name">名前：{{ $users->name }}</span>
